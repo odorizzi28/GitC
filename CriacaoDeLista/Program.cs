@@ -29,11 +29,13 @@ namespace CriacaoDeLista
             Console.ReadKey();
 
             for (int i = 0; i < lista.Length; i++)
-                lista[i] = string.Empty;// aqui limpamos o valor
-
+                lista[i] = string.Empty;// aqui limpamos o nosso valor dentro da coleção
+            //laço de repetição que usamos para para varrer nossa lista de maneira mais simples
             foreach (var item in lista)
+                //indica a lista que desejamos varrer
             {
                 Console.WriteLine(item);
+
             }
             Console.ReadKey();
         }
