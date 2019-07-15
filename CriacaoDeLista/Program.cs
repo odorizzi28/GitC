@@ -21,6 +21,16 @@ namespace CriacaoDeLista
                 //datetime é um tipodo .net c# que disponibiliza funcções relacionadas a data
                 //e horas, ou seja se precisar trabalhar com essas informações é possicvel usar esse cara.
             }
+            // laco de repeticao 
+            foreach (var item in lista)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadKey();
+
+            for (int i = 0; i < lista.Length; i++)
+                lista[i] = string.Empty;// aqui limpamos o valor
+
             foreach (var item in lista)
             {
                 Console.WriteLine(item);
