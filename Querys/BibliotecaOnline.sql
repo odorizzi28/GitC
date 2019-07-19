@@ -1,0 +1,68 @@
+﻿--CREATE TABLE [dbo].[Livros] (
+--    [Id]          INT            IDENTITY (1, 1) NOT NULL,
+--    [Registro]    INT            NOT NULL,
+--    [Titulo]      VARCHAR (1200) NOT NULL,
+--    [Isbn]        VARCHAR (15)   NOT NULL,
+--    [Genero]      INT            NOT NULL,
+--    [Editora]     INT            NOT NULL,
+--    [Sinopse]     NVARCHAR (MAX) NULL,
+--    [Observacoes] VARCHAR (1000) NULL,
+--    [Ativo]       BIT            NOT NULL,
+--    [UsuInc]      INT            NOT NULL,
+--    [UsuAlt]      INT            NOT NULL,
+--    [DatInc]      DATETIME       DEFAULT (getdate()) NOT NULL,
+--    [DatAlt]      DATETIME       DEFAULT (getdate()) NOT NULL,
+--    PRIMARY KEY CLUSTERED ([Id] ASC),
+--    CONSTRAINT [FK_Livros_To_Generos] FOREIGN KEY ([Genero]) REFERENCES [dbo].[Generos] ([Id]),
+--    CONSTRAINT [FK_Livros_To_Editoras] FOREIGN KEY ([Editora]) REFERENCES [dbo].[Editoras] ([Id]),
+--    CONSTRAINT [FK_Livros_To_UsuariosInc] FOREIGN KEY ([UsuInc]) REFERENCES [dbo].[Usuarios] ([Id]),
+--    CONSTRAINT [FK_Livros_To_UsuariosAlt] FOREIGN KEY ([UsuAlt]) REFERENCES [dbo].[Usuarios] ([Id])
+--);
+--
+	--
+	
+
+--  	CREATE TABLE [dbo].[Locacao](
+--  	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+--  	[Livro] INT NOT NULL,
+--  	[Usuario] INT NOT NULL,
+--  	[Tipo] INT NOT NULL,
+--  	[Devolucao] DATETIME NOT NULL,
+--  	[Ativo] BIT NOT NULL,
+--  	[UsuInc] INT NOT NULL,
+--  	[UsuAlt] INT NOT NULL,
+--  	[DatInc] DATETIME NOT NULL DEFAULT GETDATE(),
+--  	[DatAlt] DATETIME NOT NULL DEFAULT GETDATE(),
+--  	
+--      CONSTRAINT   [FK_Locacao_Livros] 
+--  	FOREIGN KEY ([Livro]) 
+--  	REFERENCES   [Livros]([Id]),
+--  
+--  	CONSTRAINT   [FK_Locacao_UsuarioALoc] 
+--  	FOREIGN KEY ([Usuario]) 
+--  	REFERENCES   [Usuarios]([Id]),
+--  
+--  	CONSTRAINT   [FK_Locacao_UsuInc] 
+--  	FOREIGN KEY ([UsuInc]) 
+--  	REFERENCES   [Usuarios]([Id]),
+--  
+--  	CONSTRAINT   [FK_Locacao_UsuAlt] 
+--  	FOREIGN KEY ([UsuAlt]) 
+--  	REFERENCES   [Usuarios]([Id])
+--  )
+
+--
+--	 CREATE TABLE [dbo].[LivroAutor]
+--(
+--    [Livro] INT NOT NULL, 
+--    [Autor] INT NOT NULL, 
+--
+--    CONSTRAINT   [FK_LivroAutor_Livros] 
+--	FOREIGN KEY ([Livro]) 
+--	REFERENCES   [Livros]([Id]),
+--
+--	CONSTRAINT   [FK_LivroAutor_Autores] 
+--	FOREIGN KEY ([Autor]) 
+--	REFERENCES   [Autores]([Id]),
+--
+--)

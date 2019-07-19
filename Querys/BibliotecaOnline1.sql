@@ -1,0 +1,77 @@
+﻿--  CREATE TABLE [dbo].[Livros] (
+--  	    [Id] INT IDENTITY (1, 1) NOT NULL,
+--  		[Registro] int not null,
+--  	    [Titulo]   VARCHAR (1200) NOT NULL,
+--  		[Isbn]  VARCHAR (15)  NOT NULL,
+--  		[Genero]  VARCHAR (200)  NOT NULL,
+--  	    [Editora]  VARCHAR (50)  NOT NULL,
+--  	    [Sinopse] VARCHAR (MAX) NOT NULL,
+--  		[Observacoes]  VARCHAR (1000) NULL,
+--  	    [UsuInt] INT NOT NULL,
+--  		[UsuAlt] INT  NOT NULL,
+--  		[DatInt] DATETIME NOT NULL DEFAULT GETDATE(),
+--  		[DatAlt] DATETIME NOT NULL DEFAULT GETDATE()
+--  		
+--  		CONSTRAINT [FK_lIVROS_TO_GENERO] FOREIGN KEY ([GENERO]) REFERENCES[GENERO]([ID]),
+--  
+--  		CONSTRAINT[FK_lIVROS_TO_EDITORA] FOREIGN KEY ([EDITORA]) REFERENCES[EDITORA]([ID]),
+--  
+--  		CONSTRAINT[FK_lIVROS_TO_USUARIOINT]	FOREIGN KEY ([UsuInt])	REFERENCES[UsuInt]([ID]),
+--  
+--  		CONSTRAINT[FK_lIVROS_TO_USUARIOALT]	FOREIGN KEY ([UsuAlt])REFERENCES[UsuAlt]([ID]),
+--  	   
+--  	   
+--  	);
+
+--  	CREATE TABLE [dbo].[LivroAutor]
+--  (
+--      [Livro] INT NOT NULL, 
+--      [Autor] INT NOT NULL, 
+--  
+--      CONSTRAINT   [FK_LivroAutor_Livros] 
+--  	FOREIGN KEY ([Livro]) 
+--  	REFERENCES   [Livros]([Id]),
+--  
+--  	CONSTRAINT   [FK_LivroAutor_Autores] 
+--  	FOREIGN KEY ([Autor]) 
+--  	REFERENCES   [Autores]([Id]),
+--  
+--  )
+
+  
+  
+		
+--  CREATE TABLE[dbo].[Locacao]
+--  	(
+--  	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+--  	[Livros] INT NOT NULL,
+--  	[Usuario] INT NOT NULL,
+--  	[Tipo] INT NOT NULL,
+--  	[Devolucao] DATETIME NOT NULL,
+--  	--[Observacao] VARCHAR(500) NULL,
+--  	[Ativo] BIT NOT NULL,
+--  	[UsuIn] INT NOT NULL,
+--  	[UsuAlt] INT NOT NULL,
+--  	[DatInc] DATETIME NOT NULL,
+--  	[DatAlt] DATETIME NOT NULL,
+--  
+--  	CONSTRAINT [FK_Locacao_Livros]
+--  	FOREIGN	([Livro])
+--  	REFERENCES [Livros]([Id]),
+--  
+--  	CONSTRAINT [FK_Locacao_UsuarioAloc]
+--  	FOREIGN	([Usuario])
+--  	REFERENCES [Usuarios]([Id]),
+--  
+--  	CONSTRAINT [FK_Locacao_UsuInc]
+--  	FOREIGN	([UsuInc])
+--  	REFERENCES [UsuInc]([Id]),
+--  
+--  	CONSTRAINT [FK_Locacao_UsuAlt]
+--  	FOREIGN	([UsuAlt])
+--  	REFERENCES [UsuAlt]([Id]),
+--
+--
+--
+--	)
+--
