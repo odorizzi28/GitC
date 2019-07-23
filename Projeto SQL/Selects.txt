@@ -1,0 +1,63 @@
+from Diarios d 
+
+
+inner join TurmaAlunos tr on d.Turma = tr.Turma
+--inner join Turmas t on d.Turma = t.Id
+--inner join Alunos a on tr.Aluno = a.Id
+left join Presenca p on d.Id = p.Diario and tr.Aluno = p.Aluno
+left join Notas n on tr.Aluno = n.Aluno and d.Id = n.Diario
+
+---------------------------------------------------------------------------------------------------------------
+
+select d.[Data],
+		tr.Aluno,
+		n.Nota as 'Média',
+		iif(count(p.Id) = 1,'Presente','Ausente') as 'Presenças'
+
+from Diarios d 
+
+
+	inner join TurmaAlunos tr on d.Turma = tr.Turma
+	left join Presenca p on d.Id = p.Diario and tr.Aluno = p.Aluno
+	left join Notas n on tr.Aluno = n.Aluno and d.Id = n.Diario
+
+	group by d.[Data],tr.Aluno,n.Nota
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+
+select d.[Data],
+		tr.Aluno,
+		n.Nota as 'Média',
+		iif(isnull(p.Id,0)>0,'Presente','Ausente') as 'Presenças'
+
+from Diarios d 
+
+
+	inner join TurmaAlunos tr on d.Turma = tr.Turma
+	left join Presenca p on d.Id = p.Diario and tr.Aluno = p.Aluno
+	left join Notas n on tr.Aluno = n.Aluno and d.Id = n.Diario
+
+--------------------------------------------------------------------------------------------------------------------
+
+select d.[Data],
+		tr.Aluno,
+		ISNULL(n.Nota,0) as 'Média',
+		iif(isnull(p.Id,0)>0,'Presente','Ausente') as 'Presenças'
+
+from Diarios d 
+
+
+	inner join TurmaAlunos tr on d.Turma = tr.Turma
+	left join Presenca p on d.Id = p.Diario and tr.Aluno = p.Aluno
+	left join Notas n on tr.Aluno = n.Aluno and d.Id = n.Diario
+
+
+
+
+
+
+
+

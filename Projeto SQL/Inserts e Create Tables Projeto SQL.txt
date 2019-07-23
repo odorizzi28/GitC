@@ -1,0 +1,192 @@
+--CREATE TABLE [dbo].[Usuarios] (
+--    [Id]     INT  PRIMARY KEY   IDENTITY (1, 1) NOT NULL,
+--    [Nome]   VARCHAR (100) NOT NULL,
+--    [Ativo]  BIT           NOT NULL,
+--    [UsuInc] INT           NOT NULL,
+--    [UsuAlt] INT           NOT NULL,
+--    [DatInc] DATETIME      NOT NULL,
+--    [DatAlt] DATETIME      NOT NULL,
+--    PRIMARY KEY CLUSTERED ([Id] ASC)
+--);
+
+
+
+--CREATE TABLE [dbo].[Cliente] (
+--    [Id]     INT PRIMARY KEY IDENTITY (1, 1) NOT NULL,
+--    [NomeCliente]   VARCHAR (100) NOT NULL,
+--	
+--   
+--);
+
+--CREATE TABLE [dbo].[Carros] (
+--    [Id]        INT  PRIMARY KEY NOT NULL,
+--    [NomeCarro] NCHAR (100) NOT NULL,
+--    PRIMARY KEY CLUSTERED ([Id] ASC)
+--);
+
+
+--CREATE TABLE [dbo].[Estoque] (
+--    [Id]    INT PRIMARY KEY  IDENTITY (1, 1) NOT NULL,
+--    [Carro] INT NOT NULL,
+--    PRIMARY KEY CLUSTERED ([Id] ASC)
+--);
+--
+--CREATE TABLE [dbo].[Carros] (
+--    [Id]         INT PRIMARY KEY     NOT NULL,
+--    [NomeCarro]  NCHAR (100) NOT NULL,
+--    [Disponivel] BIT         NOT NULL,
+--    PRIMARY KEY CLUSTERED ([Id] ASC)
+--);
+--
+--
+--insert into [dbo].[Carros]
+--(NomeCarro,Disponivel) values ('Civic',1)
+--go
+--
+--insert into [dbo].[Carros]
+--(NomeCarro,Disponivel) values ('Gol',1)
+--
+--go
+--
+--insert into [dbo].[Carros]
+--(NomeCarro,Disponivel) values ('Corolla',1)
+--
+--go
+--
+--
+--insert into [dbo].[Carros]
+--(NomeCarro,Disponivel) values ('Uno',1)
+--
+--go
+--
+--
+--
+--insert into [dbo].[Carros]
+--(NomeCarro,Disponivel) values ('Saveiro',1)
+--
+--go
+--
+--
+--
+--insert into [dbo].[Carros]
+--(NomeCarro,Disponivel) values ('Parati',1)
+--
+--go
+--
+--
+--
+--insert into [dbo].[Carros]
+--(NomeCarro,Disponivel) values ('Pallio',1)
+--
+--go
+--
+--insert into [dbo].[Carros]
+--(NomeCarro,Disponivel) values ('Pajeiro',1)
+--
+--go
+--
+--insert into [dbo].[Carros]
+--(NomeCarro,Disponivel) values ('Onix',1)
+--
+--go
+--
+--insert into [dbo].[Carros]
+--(NomeCarro,Disponivel) values ('Prisma',1)
+--
+--
+--CREATE TABLE [dbo].[Locacao] (
+--    [Id]            INT      IDENTITY (1, 1) NOT NULL,
+--    [Cliente]   INT      NOT NULL,
+--	[CarroId]   INT      NOT NULL,
+--    [DataLocacao]   DATETIME DEFAULT (getdate()) NOT NULL,
+--    [DataDevolucao] DATETIME DEFAULT (getdate()) NOT NULL,
+--    [UsuInc]        INT      NOT NULL,
+--    [UsuAlt]        INT      NOT NULL,
+--    [DatInc]        DATETIME NOT NULL,
+--    [DatAlt]        DATETIME NOT NULL,
+--    PRIMARY KEY CLUSTERED ([Id] ASC),
+--    CONSTRAINT [FK_Locacao_ToUsuarios_Inc] FOREIGN KEY ([UsuInc]) REFERENCES [dbo].[Usuarios] ([Id]),
+--    CONSTRAINT [FK_Locacao_ToUsuarios_Alt] FOREIGN KEY ([UsuAlt]) REFERENCES [dbo].[Usuarios] ([Id]),
+--    CONSTRAINT [FK_Locacao_ToNomeCliente] FOREIGN KEY ([Cliente]) REFERENCES [dbo].[Cliente] ([Id]), 
+--    CONSTRAINT [FK_Locacao_ToCarroId] FOREIGN KEY ([CarroId]) REFERENCES [Carros]([Id])
+--);
+
+
+                                                                          
+-- insert into [dbo].[Cliente]
+-- (NomeCliente,Ativo,UsuInc,UsuAlt,DatInc,DatAlt) 
+-- values 
+-- ('Junior',1,1,1,'2019-07-22','2019-07-22')
+-- 
+-- go
+-- 
+-- insert into [dbo].[Cliente]
+-- (NomeCliente,Ativo,UsuInc,UsuAlt,DatInc,DatAlt) 
+-- values 
+-- ('Edilson',1,1,1,'2019-07-22','2019-07-22')
+-- 
+-- 
+-- go
+-- 
+-- insert into [dbo].[Cliente]
+-- (NomeCliente,Ativo,UsuInc,UsuAlt,DatInc,DatAlt) 
+-- values 
+-- ('Ricardo',1,1,1,'2019-07-22','2019-07-22')
+-- 
+-- 
+-- go
+
+--insert into [dbo].[Locacao]
+--(Cliente,CarroId,DataLocacao,DataDevolucao,UsuInc,UsuAlt,DatInc,DatAlt) 
+--values 
+--(1,1,'2019-05-12','2019-07-22',1,1,'2019-07-22','2019-07-22')
+--
+--
+--go
+
+--
+--insert into [dbo].[Locacao]
+--(Cliente,CarroId,DataLocacao,DataDevolucao,UsuInc,UsuAlt,DatInc,DatAlt) 
+--values 
+--(1,2,'2019-05-12','2019-07-22',1,1,'2019-07-22','2019-07-22')
+--
+--
+--go
+--
+--
+--insert into [dbo].[Locacao]
+--(Cliente,CarroId,DataLocacao,DataDevolucao,UsuInc,UsuAlt,DatInc,DatAlt) 
+--values 
+--(1,4,'2019-03-12','2019-07-22',1,1,'2019-07-22','2019-07-22')
+--
+--
+--go
+--
+--
+--
+--insert into [dbo].[Locacao]
+--(Cliente,CarroId,DataLocacao,DataDevolucao,UsuInc,UsuAlt,DatInc,DatAlt) 
+--values 
+--(1,5,'2019-01-12','2019-02-22',1,1,'2019-07-22','2019-07-22')
+--
+--
+--go
+--
+--insert into [dbo].[Locacao]
+--(Cliente,CarroId,DataLocacao,DataDevolucao,UsuInc,UsuAlt,DatInc,DatAlt) 
+--values 
+--(1,6,'2018-02-12','2018-08-22',1,1,'2019-07-22','2019-07-22')
+--
+--
+--go
+--
+--
+--insert into [dbo].[Locacao]
+--(Cliente,CarroId,DataLocacao,DataDevolucao,UsuInc,UsuAlt,DatInc,DatAlt) 
+--values 
+--(1,7,'2018-04-17','2018-05-22',1,1,'2019-07-22','2019-07-22')
+--
+--
+--go
+
+
