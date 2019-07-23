@@ -29,6 +29,8 @@ order by COUNT(UsuInc) desc;
 
 select COUNT(UsuInc) as 'Quantidade' from Marcas where UsuInc <> 0;
 
+
+
 --Trazer somente os carros que Felipe cadastrou
 
 select Modelo from Carros where UsuInc = 1;
