@@ -14,8 +14,8 @@ namespace ClassesEscola
         public void inserir()
         {
             Console.Clear();
-            for (int i = 0; i < arrayAluno.GetLength(0); i++)
-           // for (int i = 0; i < 2; i++)
+            //for (int i = 0; i < arrayAluno.GetLength(0); i++)
+            for (int i = 0; i < 1; i++)
             {
                 Console.Clear();
                 Console.WriteLine("Informe o nome do  Aluno");
@@ -66,7 +66,7 @@ namespace ClassesEscola
         public void Listar()
         {
             //for (int i = 0; i < arrayAluno.GetLength(0); i++)
-            for (int i = 0; i < arrayAluno.GetLength(0); i++)
+            for (int i = 0; i < 1; i++)
             {
 
                 Console.WriteLine($"Id.........: {arrayAluno[i, 0]}");
@@ -74,6 +74,7 @@ namespace ClassesEscola
                 Console.WriteLine($"Média......: {arrayAluno[i, 2]}");
                 Console.WriteLine($"Frequencia.: {arrayAluno[i, 3]}%");
                 Console.WriteLine($"Situação...: {arrayAluno[i, 4]}");
+                Console.ReadKey();
                 
             }
         }
@@ -84,7 +85,7 @@ namespace ClassesEscola
             //Entrou no menu inicial inicializa a limpeza da tela
             Console.Clear();
             Console.WriteLine("Menu");
-            Console.WriteLine("1 - Inseir um novo registro.");
+            Console.WriteLine("1 - Inserir um novo registro.");
             Console.WriteLine("2 - Excluir um registro.");
             Console.WriteLine("3 - Listar informações.");
             Console.WriteLine("4 - Alterar informações.");
@@ -100,17 +101,19 @@ namespace ClassesEscola
 
 
 
-        public void Excluir(int pId)
+        public void Excluir()
 
         {
             Console.Clear();
+            Listar();
             Console.WriteLine("Informe registro que deseja excluir");
+
             int.TryParse(Console.ReadLine(), out int reg);
 
 
             for (int i = 0; i < arrayAluno.GetLength(0); i++)
             {
-                if (arrayAluno[i,0] == pId.ToString())
+                if (arrayAluno[i,0] == reg.ToString())
                 {
                     arrayAluno[i, 1] = "";
                     arrayAluno[i, 2] = "";
@@ -122,14 +125,16 @@ namespace ClassesEscola
         }
 
 
-        public void Alterar(int pId)
+        public void Alterar()
         {
             Console.Clear();
+            Listar();
             Console.WriteLine("Informe registro que deseja excluir");
+
             int.TryParse(Console.ReadLine(), out int reg);
             for (int i = 0; i < arrayAluno.GetLength(0); i++)
                 {
-                    if (arrayAluno[i, 0] == pId.ToString())
+                    if (arrayAluno[i, 0] == reg.ToString())
                     {
                     var media = digitaNotas();
                     arrayAluno[i, 2] = media.ToString();//media

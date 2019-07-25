@@ -24,11 +24,11 @@ namespace GestorEscola
                     //1- Insere as informações 
                     case "1": { cadastro.inserir(); } break;
                     //2- Remove informações da nossa lista
-                    case "2":// { cadastro.Excluir(); } break;
+                    case "2": { cadastro.Excluir(); } break;
                     //Lista as informações da lista
                     case "3": { cadastro.Listar(); } break;
 
-                    case "4":// { cadastro.Alterar(); } break;
+                    case "4": { cadastro.Alterar(); } break;
 
                     //Sai do nosso sistema
                     case "5":
