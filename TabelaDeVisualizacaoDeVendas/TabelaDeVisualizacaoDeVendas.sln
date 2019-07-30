@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabelaDeVisualizacaoDeVendas", "TabelaDeVisualizacaoDeVendas.csproj", "{5C777C36-EC22-448F-97AC-44CE5F45595E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C777C36-EC22-448F-97AC-44CE5F45595E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C777C36-EC22-448F-97AC-44CE5F45595E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C777C36-EC22-448F-97AC-44CE5F45595E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C777C36-EC22-448F-97AC-44CE5F45595E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {104DE6CB-077C-4096-921A-E5A5F9541701}
+	EndGlobalSection
+EndGlobal
