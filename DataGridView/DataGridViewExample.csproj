@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{37C0115E-D14D-4800-B40F-FC3C546E5799}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DataGridView</RootNamespace>
+    <AssemblyName>DataGridView</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adicionar\frmAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionar.Designer.cs">
+      <DependentUpon>frmAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Carros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carros.Designer.cs">
+      <DependentUpon>Carros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoCarros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoCarros.Designer.cs">
+      <DependentUpon>frmEdicaoCarros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\FrmEdicaoMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\FrmEdicaoMarcas.Designer.cs">
+      <DependentUpon>FrmEdicaoMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoUsuario.Designer.cs">
+      <DependentUpon>frmEdicaoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoVendas.Designer.cs">
+      <DependentUpon>frmEdicaoVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lixeira.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lixeira.Designer.cs">
+      <DependentUpon>Lixeira.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Carro.cs" />
+    <Compile Include="Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendas.Designer.cs">
+      <DependentUpon>Vendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marcas.Designer.cs">
+      <DependentUpon>Marcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuerysInnerJoinDataSet1.cs">
+      <DependentUpon>QuerysInnerJoinDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuerysInnerJoinDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuerysInnerJoinDataSet1.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Adicionar\frmAdicionar.resx">
+      <DependentUpon>frmAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carros.resx">
+      <DependentUpon>Carros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\frmEdicaoCarros.resx">
+      <DependentUpon>frmEdicaoCarros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\FrmEdicaoMarcas.resx">
+      <DependentUpon>FrmEdicaoMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\frmEdicaoVendas.resx">
+      <DependentUpon>frmEdicaoVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lixeira.resx">
+      <DependentUpon>Lixeira.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas.resx">
+      <DependentUpon>Vendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marcas.resx">
+      <DependentUpon>Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="QuerysInnerJoinDataSet1.xsc">
+      <DependentUpon>QuerysInnerJoinDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QuerysInnerJoinDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuerysInnerJoinDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuerysInnerJoinDataSet1.xss">
+      <DependentUpon>QuerysInnerJoinDataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
