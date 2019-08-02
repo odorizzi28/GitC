@@ -30,6 +30,7 @@ namespace DataGridView.Edicao
             this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet1.Carros);
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Marcas' table. You can move, or remove it, as needed.
             this.marcasTableAdapter.Fill(this.querysInnerJoinDataSet1.Marcas);
+
             textBox1.Text = CarrosRow.Modelo;
             dateTimePicker1.Value = CarrosRow.Ano;
             comboBox1.SelectedValue = CarrosRow.Marca;

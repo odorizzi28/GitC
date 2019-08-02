@@ -8,19 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DataGridView.Edicao
+namespace DataGridView.Adicionar
 {
-    public partial class frmEdicaoUsuario : Form
+    public partial class frmAdicionarUsuarios : Form
     {
-        public frmEdicaoUsuario()
+        public frmAdicionarUsuarios()
         {
             InitializeComponent();
         }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
+       // public Usuario();
     }
-
 }

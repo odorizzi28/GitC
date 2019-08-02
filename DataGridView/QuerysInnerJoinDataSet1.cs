@@ -1,4 +1,6 @@
-﻿namespace DataGridView
+﻿using System;
+
+namespace DataGridView
 {
 
 
@@ -15,6 +17,10 @@ namespace DataGridView.QuerysInnerJoinDataSet1TableAdapters
 
     partial class UsuariosTableAdapter
     {
+        internal void Insert(object usuarios, bool v1, int v2, int v3, DateTime now1, DateTime now2)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public partial class MarcasTableAdapter {

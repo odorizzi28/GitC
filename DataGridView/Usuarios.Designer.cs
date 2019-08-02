@@ -33,11 +33,8 @@
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuariosTableAdapter = new DataGridView.QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.usuariosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.querysInnerJoinDataSet11 = new DataGridView.QuerysInnerJoinDataSet1();
-            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.querysInnerJoinDataSet1 = new DataGridView.QuerysInnerJoinDataSet1();
             this.Delet = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -46,6 +43,10 @@
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteCommandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuariosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.querysInnerJoinDataSet11 = new DataGridView.QuerysInnerJoinDataSet1();
+            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.querysInnerJoinDataSet1 = new DataGridView.QuerysInnerJoinDataSet1();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource2)).BeginInit();
@@ -62,6 +63,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // usuariosTableAdapter
             // 
@@ -75,6 +77,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delet,
+            this.Editar,
             this.idDataGridViewTextBoxColumn,
             this.usuarioDataGridViewTextBoxColumn,
             this.ativoDataGridViewCheckBoxColumn,
@@ -93,26 +96,6 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
-            // usuariosBindingSource2
-            // 
-            this.usuariosBindingSource2.DataMember = "Usuarios";
-            this.usuariosBindingSource2.DataSource = this.querysInnerJoinDataSet11;
-            // 
-            // querysInnerJoinDataSet11
-            // 
-            this.querysInnerJoinDataSet11.DataSetName = "QuerysInnerJoinDataSet1";
-            this.querysInnerJoinDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosBindingSource1
-            // 
-            this.usuariosBindingSource1.DataMember = "Usuarios";
-            this.usuariosBindingSource1.DataSource = this.querysInnerJoinDataSet1;
-            // 
-            // querysInnerJoinDataSet1
-            // 
-            this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
-            this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // Delet
             // 
             this.Delet.DataPropertyName = "DeleteCommand";
@@ -123,6 +106,17 @@
             this.Delet.Text = "Delete";
             this.Delet.UseColumnTextForButtonValue = true;
             this.Delet.Width = 125;
+            // 
+            // Editar
+            // 
+            this.Editar.DataPropertyName = "Id";
+            this.Editar.HeaderText = "Editar";
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
+            this.Editar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -196,6 +190,26 @@
             this.deleteCommandDataGridViewTextBoxColumn.ReadOnly = true;
             this.deleteCommandDataGridViewTextBoxColumn.Width = 125;
             // 
+            // usuariosBindingSource2
+            // 
+            this.usuariosBindingSource2.DataMember = "Usuarios";
+            this.usuariosBindingSource2.DataSource = this.querysInnerJoinDataSet11;
+            // 
+            // querysInnerJoinDataSet11
+            // 
+            this.querysInnerJoinDataSet11.DataSetName = "QuerysInnerJoinDataSet1";
+            this.querysInnerJoinDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosBindingSource1
+            // 
+            this.usuariosBindingSource1.DataMember = "Usuarios";
+            this.usuariosBindingSource1.DataSource = this.querysInnerJoinDataSet1;
+            // 
+            // querysInnerJoinDataSet1
+            // 
+            this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
+            this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,6 +241,7 @@
         private QuerysInnerJoinDataSet1 querysInnerJoinDataSet11;
         private System.Windows.Forms.BindingSource usuariosBindingSource2;
         private System.Windows.Forms.DataGridViewButtonColumn Delet;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;

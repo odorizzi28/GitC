@@ -36,6 +36,7 @@ namespace DataGridView.Adicionar
                 Marca = (int)comboBox1.SelectedValue
 
             };
+            this.Close();
         }
     }
 }

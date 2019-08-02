@@ -38,6 +38,7 @@ namespace DataGridView
             }
 
             this.carrosTableAdapter.CustomQuerry(this.querysInnerJoinDataSet1.Carros);
+            
         }
 
         private void Lixeira_Load(object sender, EventArgs e)

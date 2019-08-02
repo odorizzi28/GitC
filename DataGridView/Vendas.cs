@@ -1,4 +1,5 @@
-﻿using DataGridView.Edicao;
+﻿using DataGridView.Adicionar;
+using DataGridView.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,6 +55,24 @@ namespace DataGridView
 
             this.vendasTableAdapter.CustomQuerry(querysInnerJoinDataSet1.Vendas);
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarVendas frmVenda = new frmAdicionarVendas();
+            frmVenda.ShowDialog();
+
+           /* this.vendasTableAdapter.Insert(
+                  frmVenda.venda.Carro,
+                  frmVenda.venda.Quantidade,
+                  frmVenda.venda.Valor,
+                  frmVenda.venda.Ativo,
+                  1,
+                  1,
+                  frmVenda.venda.DatInc,
+                  frmVenda.venda.DatAlt
+                  );
+                  */
         }
     }
 }

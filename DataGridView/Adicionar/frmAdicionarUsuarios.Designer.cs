@@ -1,6 +1,6 @@
-﻿namespace DataGridView.Edicao
+﻿namespace DataGridView.Adicionar
 {
-    partial class frmEdicaoUsuario
+    partial class frmAdicionarUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Location = new System.Drawing.Point(24, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 17);
             this.label1.TabIndex = 0;
@@ -44,31 +44,30 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(76, 16);
+            this.textBox1.Location = new System.Drawing.Point(107, 17);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 22);
+            this.textBox1.Size = new System.Drawing.Size(191, 22);
             this.textBox1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(76, 76);
+            this.button1.Location = new System.Drawing.Point(27, 71);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(258, 76);
+            this.button1.Size = new System.Drawing.Size(271, 68);
             this.button1.TabIndex = 2;
             this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // frmEdicaoUsuario
+            // frmAdicionarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 180);
+            this.ClientSize = new System.Drawing.Size(349, 195);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "frmEdicaoUsuario";
-            this.Text = "frmEdicaoUsuario";
+            this.Name = "frmAdicionarUsuarios";
+            this.Text = "frmAdicionarUsuarios";
             this.ResumeLayout(false);
             this.PerformLayout();
 

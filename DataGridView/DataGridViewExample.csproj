@@ -52,6 +52,24 @@
     <Compile Include="Adicionar\frmAdicionar.Designer.cs">
       <DependentUpon>frmAdicionar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Adicionar\frmAdicionarMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionarMarcas.Designer.cs">
+      <DependentUpon>frmAdicionarMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionarUsuarios.Designer.cs">
+      <DependentUpon>frmAdicionarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionarVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionarVendas.Designer.cs">
+      <DependentUpon>frmAdicionarVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Carros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +107,9 @@
       <DependentUpon>Lixeira.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Carro.cs" />
+    <Compile Include="Model\Marca.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\Venda.cs" />
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +141,15 @@
     <EmbeddedResource Include="Adicionar\frmAdicionar.resx">
       <DependentUpon>frmAdicionar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\frmAdicionarMarcas.resx">
+      <DependentUpon>frmAdicionarMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\frmAdicionarUsuarios.resx">
+      <DependentUpon>frmAdicionarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\frmAdicionarVendas.resx">
+      <DependentUpon>frmAdicionarVendas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Carros.resx">
       <DependentUpon>Carros.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edicao\FrmEdicaoMarcas.resx">
       <DependentUpon>FrmEdicaoMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\frmEdicaoUsuario.resx">
+      <DependentUpon>frmEdicaoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edicao\frmEdicaoVendas.resx">
       <DependentUpon>frmEdicaoVendas.cs</DependentUpon>

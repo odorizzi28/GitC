@@ -21,13 +21,13 @@ namespace DataGridView.Edicao
 
         private void FrmEdicaoMarcas_Load_1(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
+
             marcasRow.Nome = tbxMarca.Text;
-            
             this.Close();
 
         }

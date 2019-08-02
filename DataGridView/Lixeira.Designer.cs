@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.carrosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.querysInnerJoinDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.querysInnerJoinDataSet1 = new DataGridView.QuerysInnerJoinDataSet1();
             this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -38,8 +39,7 @@
             this.fKVendasCarrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vendasTableAdapter = new DataGridView.QuerysInnerJoinDataSet1TableAdapters.VendasTableAdapter();
             this.carrosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.carrosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.Excluir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Ativar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.usuIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,13 +47,13 @@
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKVendasCarrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -63,7 +63,7 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Excluir,
+            this.Ativar,
             this.idDataGridViewTextBoxColumn,
             this.ativoDataGridViewCheckBoxColumn,
             this.usuIncDataGridViewTextBoxColumn,
@@ -79,6 +79,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(787, 434);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // carrosBindingSource2
+            // 
+            this.carrosBindingSource2.DataMember = "Carros";
+            this.carrosBindingSource2.DataSource = this.querysInnerJoinDataSet1BindingSource;
             // 
             // querysInnerJoinDataSet1BindingSource
             // 
@@ -118,21 +123,16 @@
             this.carrosBindingSource1.DataMember = "Carros";
             this.carrosBindingSource1.DataSource = this.querysInnerJoinDataSet1BindingSource;
             // 
-            // carrosBindingSource2
+            // Ativar
             // 
-            this.carrosBindingSource2.DataMember = "Carros";
-            this.carrosBindingSource2.DataSource = this.querysInnerJoinDataSet1BindingSource;
-            // 
-            // Excluir
-            // 
-            this.Excluir.DataPropertyName = "Id";
-            this.Excluir.HeaderText = "Excluir";
-            this.Excluir.MinimumWidth = 6;
-            this.Excluir.Name = "Excluir";
-            this.Excluir.ReadOnly = true;
-            this.Excluir.Text = "Excluir";
-            this.Excluir.UseColumnTextForButtonValue = true;
-            this.Excluir.Width = 125;
+            this.Ativar.DataPropertyName = "Id";
+            this.Ativar.HeaderText = "Ativar";
+            this.Ativar.MinimumWidth = 6;
+            this.Ativar.Name = "Ativar";
+            this.Ativar.ReadOnly = true;
+            this.Ativar.Text = "Ativar";
+            this.Ativar.UseColumnTextForButtonValue = true;
+            this.Ativar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -198,13 +198,13 @@
             this.Text = "Lixeira";
             this.Load += new System.EventHandler(this.Lixeira_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKVendasCarrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,7 +221,7 @@
         private QuerysInnerJoinDataSet1TableAdapters.VendasTableAdapter vendasTableAdapter;
         private System.Windows.Forms.BindingSource carrosBindingSource1;
         private System.Windows.Forms.BindingSource carrosBindingSource2;
-        private System.Windows.Forms.DataGridViewButtonColumn Excluir;
+        private System.Windows.Forms.DataGridViewButtonColumn Ativar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuIncDataGridViewTextBoxColumn;
