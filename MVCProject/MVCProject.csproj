@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDeDadosBibliotecaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDeDadosBibliotecaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +64,7 @@
     <Compile Include="Model\Livro.cs" />
     <Compile Include="Model\LivroAutor.cs" />
     <Compile Include="Model\Locacao.cs" />
+    <Compile Include="Model\Session.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +75,78 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SistemaBibliotecaDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarAutores.Designer.cs">
+      <DependentUpon>frmAdicionarAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarGeneros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarGeneros.Designer.cs">
+      <DependentUpon>frmAdicionarGeneros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLivros.Designer.cs">
+      <DependentUpon>frmAdicionarLivros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLocacao.Designer.cs">
+      <DependentUpon>frmAdicionarLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarUsuarios.Designer.cs">
+      <DependentUpon>frmAdicionarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frnAdicionarEditoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frnAdicionarEditoras.Designer.cs">
+      <DependentUpon>frnAdicionarEditoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoAutor.Designer.cs">
+      <DependentUpon>frmEdicaoAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoEditoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoEditoras.Designer.cs">
+      <DependentUpon>frmEdicaoEditoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoGenero.Designer.cs">
+      <DependentUpon>frmEdicaoGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoLivros.Designer.cs">
+      <DependentUpon>frmEdicaoLivros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoLocacao.Designer.cs">
+      <DependentUpon>frmEdicaoLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoUsuarios.Designer.cs">
+      <DependentUpon>frmEdicaoUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmEditoras.cs">
       <SubType>Form</SubType>
@@ -124,6 +202,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarAutores.resx">
+      <DependentUpon>frmAdicionarAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarGeneros.resx">
+      <DependentUpon>frmAdicionarGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarLivros.resx">
+      <DependentUpon>frmAdicionarLivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frnAdicionarEditoras.resx">
+      <DependentUpon>frnAdicionarEditoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edicao\frmEdicaoAutor.resx">
+      <DependentUpon>frmEdicaoAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edicao\frmEdicaoEditoras.resx">
+      <DependentUpon>frmEdicaoEditoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edicao\frmEdicaoGenero.resx">
+      <DependentUpon>frmEdicaoGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edicao\frmEdicaoLivros.resx">
+      <DependentUpon>frmEdicaoLivros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmEditoras.resx">
       <DependentUpon>frmEditoras.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +247,17 @@
     <EmbeddedResource Include="View\frmLocacao.resx">
       <DependentUpon>frmLocacao.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BaseDeDadosBibliotecaDataSet.xsc">
+      <DependentUpon>BaseDeDadosBibliotecaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BaseDeDadosBibliotecaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaseDeDadosBibliotecaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaseDeDadosBibliotecaDataSet.xss">
+      <DependentUpon>BaseDeDadosBibliotecaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -169,5 +282,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

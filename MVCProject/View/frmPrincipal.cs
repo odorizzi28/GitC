@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCProject.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace MVCProject.View
         public frmPrincipal()
         {
             InitializeComponent();
+          //  if (Session.user == null)
+                //throw new Exception("Erro Critico de Sistema!");
         }
 
         private void UsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,6 +55,11 @@ namespace MVCProject.View
         {
             frmEditoras frmEditora = new frmEditoras();
             frmEditora.ShowDialog();
+        }
+
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

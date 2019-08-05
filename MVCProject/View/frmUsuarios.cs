@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCProject.View.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,30 @@ namespace MVCProject.View
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            var Usuario = ((System.Data.DataRowView)
+            this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+            as MVCProject.SistemaBibliotecaDBDataSet.UsuariosRow;
+
+            switch (e.ColumnIndex)
+            {
+                case 0:
+                    {
+                        this.usuariosTableAdapter.DeleteQuery(Usuario.Id);
+
+                    }
+                    break;
+                case 1:
+                    {
+                        frmEdicaoUsuarios addUser = new frmEdicaoUsuarios();
+                        addUser.UsuariosRow = Usuario;
+                        addUser.ShowDialog();
+
+                        this.usuariosTableAdapter.Update(addUser.UsuariosRow);
+                    }
+                    break;
+
+            }
+            this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Usuarios);
         }
     }
 }

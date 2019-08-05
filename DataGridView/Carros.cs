@@ -45,6 +45,7 @@ namespace DataGridView
                         editCarros.CarrosRow = carSelect;
                         editCarros.ShowDialog();
                         //this.carrosTableAdapter.Update(editCarros.CarrosRow);
+
                         this.carrosTableAdapter.UpdateQuery(
                                 editCarros.CarrosRow.Modelo,
                                 editCarros.CarrosRow.Ano.ToString(),

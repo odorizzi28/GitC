@@ -19,6 +19,10 @@ namespace MVCProject.View
 
         private void Locacao_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'baseDeDadosBibliotecaDataSet.Usuarios' table. You can move, or remove it, as needed.
+            //this.usuariosTableAdapter.Fill(this.baseDeDadosBibliotecaDataSet.Usuarios);
+            // TODO: This line of code loads data into the 'baseDeDadosBibliotecaDataSet.Locacao' table. You can move, or remove it, as needed.
+            //this.locacaoTableAdapter1.Fill(this.baseDeDadosBibliotecaDataSet.Locacao);
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Locacao' table. You can move, or remove it, as needed.
             this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Locacao);
 
