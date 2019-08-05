@@ -1,4 +1,5 @@
-﻿using MVCProject.View.Edicao;
+﻿using MVCProject.View.Adicionar;
+using MVCProject.View.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,6 +52,13 @@ namespace MVCProject.View
 
             }
             this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Usuarios);
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarUsuarios addUser = new frmAdicionarUsuarios();
+            addUser.ShowDialog();
+            
         }
     }
 }
