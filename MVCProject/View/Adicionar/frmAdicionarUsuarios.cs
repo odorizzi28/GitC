@@ -26,6 +26,7 @@ namespace MVCProject.View.Adicionar
                 Nome = tbxNome.Text,
                 Login = tbxLogin.Text,
                 Senha = tbxSenha.Text,
+                Email = txbEmail.Text,
                 Ativo = true,
                 UsuInc = 1,
                 UsuAlt = 1,

@@ -211,6 +211,9 @@
     <EmbeddedResource Include="View\Adicionar\frmAdicionarLivros.resx">
       <DependentUpon>frmAdicionarLivros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarLocacao.resx">
+      <DependentUpon>frmAdicionarLocacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Adicionar\frmAdicionarUsuarios.resx">
       <DependentUpon>frmAdicionarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Edicao\frmEdicaoLivros.resx">
       <DependentUpon>frmEdicaoLivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edicao\frmEdicaoLocacao.resx">
+      <DependentUpon>frmEdicaoLocacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Edicao\frmEdicaoUsuarios.resx">
       <DependentUpon>frmEdicaoUsuarios.cs</DependentUpon>

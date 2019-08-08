@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MVCProject.View.Adicionar;
+using MVCProject.View.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,5 +29,41 @@ namespace MVCProject.View
             this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Locacao);
 
         }
+
+        
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var locacao = ((System.Data.DataRowView)
+            this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+            as MVCProject.SistemaBibliotecaDBDataSet.LocacaoRow;
+
+            switch (e.ColumnIndex)
+            {
+                case 0:
+                    {
+                        this.locacaoTableAdapter.DeleteQuery(locacao.Id);
+
+                    }
+                    break;
+                case 1:
+                    {
+                        frmEdicaoLocacao EditLocacao = new frmEdicaoLocacao();
+                        EditLocacao.locacaoRow = locacao;
+                        EditLocacao.ShowDialog();
+
+                        this.locacaoTableAdapter.Update(EditLocacao.locacaoRow);
+                    }
+                    break;
+
+            }
+            this.locacaoTableAdapter.CustonQuerry(this.sistemaBibliotecaDBDataSet.Locacao);
+        }
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarLocacao addLocacao = new frmAdicionarLocacao();
+            addLocacao.ShowDialog();
+            this.locacaoTableAdapter.CustonQuerry(this.sistemaBibliotecaDBDataSet.Locacao);
+        }
+
     }
 }

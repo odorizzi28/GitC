@@ -9,6 +9,10 @@
 
 namespace MVCProject.SistemaBibliotecaDBDataSetTableAdapters
 {
+    partial class UsuariosTableAdapter
+    {
+    }
+
     partial class LivroAutorTableAdapter
     {
     }

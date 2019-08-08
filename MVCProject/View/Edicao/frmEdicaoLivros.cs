@@ -14,7 +14,7 @@ namespace MVCProject.View.Edicao
     public partial class frmEdicaoLivros : Form
     {
         public MVCProject.SistemaBibliotecaDBDataSet.LivrosRow LivrosRow;
-        public Livro livro;
+        
         public frmEdicaoLivros()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace MVCProject.View.Edicao
             LivrosRow.Titulo = tbxTitulo.Text;
             LivrosRow.Isbn = tbxIsbn.Text;
             LivrosRow.Genero = (int)comboGenero.SelectedValue;
-            LivrosRow.Editora = (int)comboEditora.SelectedValue;
+            //LivrosRow.Editora = (int)comboEditora.SelectedValue;
             LivrosRow.Sinopse = tbxSinopse.Text;
             LivrosRow.Observacoes = tbxObservacao.Text;
             LivrosRow.Ativo = true;

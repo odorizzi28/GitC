@@ -17,26 +17,28 @@ namespace MVCProject.View.Adicionar
         {
             InitializeComponent();
         }
-        public MVCProject.SistemaBibliotecaDBDataSet.LivrosRow LivrosRow;
-        public Livro LivroRow;
+
+        public Livro Livro;
         private void Adicionar_Click(object sender, EventArgs e)
         {
-            LivroRow = new Livro();
-            LivroRow.Registro = int.Parse(tbxRegistro.Text);
-            LivroRow.Titulo = tbxTitulo.Text;
-            LivroRow.ISBN = tbxIsbn.Text;
-            LivroRow.Genero = (int)ComboGenero.SelectedValue;
-            LivroRow.Editora = (int)comboEditora.SelectedValue;
-            LivroRow.Sinopse = tbxSinopse.Text;
-            LivroRow.Observacao = tbxObservacçoes.Text;
-            LivroRow.Ativo = true;
-            LivroRow.UsuInc = 1;
-            LivroRow.UsuAlt = 1;
-            LivroRow.DatInc = DateTime.Now;
-            LivroRow.DatAlt = DateTime.Now;
-
+            Livro = new Livro
+            {
+                Registro = int.Parse(tbxRegistro.Text),
+                Titulo = tbxTitulo.Text,
+                ISBN = tbxIsbn.Text,
+                Genero = (int)ComboGenero.SelectedValue,
+                Editora = (int)comboEditora.SelectedValue,
+                Sinopse = tbxSinopse.Text,
+                Observacao = tbxObservacçoes.Text,
+                Ativo = true,
+                UsuInc = 1,
+                UsuAlt = 1,
+                DatInc = DateTime.Now,
+                DatAlt = DateTime.Now,
+        };                
+        
             this.Close();
-
+        
         }
 
         private void FrmAdicionarLivros_Load(object sender, EventArgs e)

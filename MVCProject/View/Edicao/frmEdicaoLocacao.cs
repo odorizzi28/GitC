@@ -16,5 +16,11 @@ namespace MVCProject.View.Edicao
         {
             InitializeComponent();
         }
+        public MVCProject.SistemaBibliotecaDBDataSet.LocacaoRow locacaoRow;
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

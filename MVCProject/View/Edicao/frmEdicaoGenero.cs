@@ -34,6 +34,7 @@ namespace MVCProject.View.Edicao
         {
            GeneroRow.Tipo = textBox1.Text;
             GeneroRow.Descrição = textBox2.Text;
+            this.Close();
         }
     }
 }

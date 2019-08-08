@@ -22,7 +22,7 @@ namespace MVCProject.View
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Usuarios' table. You can move, or remove it, as needed.
-            this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Usuarios);
+            this.usuariosTableAdapter.CustonQuerry(this.sistemaBibliotecaDBDataSet.Usuarios);
 
         }
 
@@ -51,14 +51,25 @@ namespace MVCProject.View
                     break;
 
             }
-            this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Usuarios);
+            this.usuariosTableAdapter.CustonQuerry(this.sistemaBibliotecaDBDataSet.Usuarios);
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             frmAdicionarUsuarios addUser = new frmAdicionarUsuarios();
             addUser.ShowDialog();
-            
+            this.usuariosTableAdapter.Insert(
+                addUser.usuario.Nome,
+                addUser.usuario.Login,
+                addUser.usuario.Senha,
+                addUser.usuario.Email,
+                addUser.usuario.Ativo,
+                addUser.usuario.UsuInc,
+                addUser.usuario.UsuAlt,
+                addUser.usuario.DatInc,
+                addUser.usuario.DatAlt);
+
+            this.usuariosTableAdapter.CustonQuerry(this.sistemaBibliotecaDBDataSet.Usuarios);
         }
     }
 }

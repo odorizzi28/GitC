@@ -42,8 +42,6 @@ namespace MVCProject {
         
         private global::System.Data.DataRelation relationFK_LivroAutor_Livros;
         
-        private global::System.Data.DataRelation relationFK_Livros_To_Editoras;
-        
         private global::System.Data.DataRelation relationFK_Livros_To_Generos;
         
         private global::System.Data.DataRelation relationFK_Livros_To_UsuariosAlt;
@@ -360,7 +358,6 @@ namespace MVCProject {
             }
             this.relationFK_LivroAutor_Autores = this.Relations["FK_LivroAutor_Autores"];
             this.relationFK_LivroAutor_Livros = this.Relations["FK_LivroAutor_Livros"];
-            this.relationFK_Livros_To_Editoras = this.Relations["FK_Livros_To_Editoras"];
             this.relationFK_Livros_To_Generos = this.Relations["FK_Livros_To_Generos"];
             this.relationFK_Livros_To_UsuariosAlt = this.Relations["FK_Livros_To_UsuariosAlt"];
             this.relationFK_Livros_To_UsuariosInc = this.Relations["FK_Livros_To_UsuariosInc"];
@@ -400,10 +397,6 @@ namespace MVCProject {
                         this.tableLivros.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableLivroAutor.LivroColumn}, false);
             this.Relations.Add(this.relationFK_LivroAutor_Livros);
-            this.relationFK_Livros_To_Editoras = new global::System.Data.DataRelation("FK_Livros_To_Editoras", new global::System.Data.DataColumn[] {
-                        this.tableEditoras.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLivros.EditoraColumn}, false);
-            this.Relations.Add(this.relationFK_Livros_To_Editoras);
             this.relationFK_Livros_To_Generos = new global::System.Data.DataRelation("FK_Livros_To_Generos", new global::System.Data.DataColumn[] {
                         this.tableGeneros.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableLivros.GeneroColumn}, false);
@@ -1720,13 +1713,13 @@ namespace MVCProject {
             
             private global::System.Data.DataColumn columnGenero;
             
-            private global::System.Data.DataColumn columnEditora;
-            
             private global::System.Data.DataColumn columnSinopse;
             
             private global::System.Data.DataColumn columnObservacoes;
             
             private global::System.Data.DataColumn columnAtivo;
+            
+            private global::System.Data.DataColumn columnEditorasNome;
             
             private global::System.Data.DataColumn columnUsuInc;
             
@@ -1735,6 +1728,8 @@ namespace MVCProject {
             private global::System.Data.DataColumn columnDatInc;
             
             private global::System.Data.DataColumn columnDatAlt;
+            
+            private global::System.Data.DataColumn columnGeneroNome;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1811,14 +1806,6 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn EditoraColumn {
-                get {
-                    return this.columnEditora;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn SinopseColumn {
                 get {
                     return this.columnSinopse;
@@ -1838,6 +1825,14 @@ namespace MVCProject {
             public global::System.Data.DataColumn AtivoColumn {
                 get {
                     return this.columnAtivo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EditorasNomeColumn {
+                get {
+                    return this.columnEditorasNome;
                 }
             }
             
@@ -1870,6 +1865,14 @@ namespace MVCProject {
             public global::System.Data.DataColumn DatAltColumn {
                 get {
                     return this.columnDatAlt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn GeneroNomeColumn {
+                get {
+                    return this.columnGeneroNome;
                 }
             }
             
@@ -1910,7 +1913,7 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LivrosRow AddLivrosRow(int Registro, string Titulo, string Isbn, GenerosRow parentGenerosRowByFK_Livros_To_Generos, EditorasRow parentEditorasRowByFK_Livros_To_Editoras, string Sinopse, string Observacoes, bool Ativo, UsuariosRow parentUsuariosRowByFK_Livros_To_UsuariosInc, UsuariosRow parentUsuariosRowByFK_Livros_To_UsuariosAlt, System.DateTime DatInc, System.DateTime DatAlt) {
+            public LivrosRow AddLivrosRow(int Registro, string Titulo, string Isbn, GenerosRow parentGenerosRowByFK_Livros_To_Generos, string Sinopse, string Observacoes, bool Ativo, string EditorasNome, UsuariosRow parentUsuariosRowByFK_Livros_To_UsuariosInc, UsuariosRow parentUsuariosRowByFK_Livros_To_UsuariosAlt, System.DateTime DatInc, System.DateTime DatAlt, string GeneroNome) {
                 LivrosRow rowLivrosRow = ((LivrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1918,19 +1921,17 @@ namespace MVCProject {
                         Titulo,
                         Isbn,
                         null,
-                        null,
                         Sinopse,
                         Observacoes,
                         Ativo,
+                        EditorasNome,
                         null,
                         null,
                         DatInc,
-                        DatAlt};
+                        DatAlt,
+                        GeneroNome};
                 if ((parentGenerosRowByFK_Livros_To_Generos != null)) {
                     columnValuesArray[4] = parentGenerosRowByFK_Livros_To_Generos[0];
-                }
-                if ((parentEditorasRowByFK_Livros_To_Editoras != null)) {
-                    columnValuesArray[5] = parentEditorasRowByFK_Livros_To_Editoras[0];
                 }
                 if ((parentUsuariosRowByFK_Livros_To_UsuariosInc != null)) {
                     columnValuesArray[9] = parentUsuariosRowByFK_Livros_To_UsuariosInc[0];
@@ -1972,14 +1973,15 @@ namespace MVCProject {
                 this.columnTitulo = base.Columns["Titulo"];
                 this.columnIsbn = base.Columns["Isbn"];
                 this.columnGenero = base.Columns["Genero"];
-                this.columnEditora = base.Columns["Editora"];
                 this.columnSinopse = base.Columns["Sinopse"];
                 this.columnObservacoes = base.Columns["Observacoes"];
                 this.columnAtivo = base.Columns["Ativo"];
+                this.columnEditorasNome = base.Columns["EditorasNome"];
                 this.columnUsuInc = base.Columns["UsuInc"];
                 this.columnUsuAlt = base.Columns["UsuAlt"];
                 this.columnDatInc = base.Columns["DatInc"];
                 this.columnDatAlt = base.Columns["DatAlt"];
+                this.columnGeneroNome = base.Columns["GeneroNome"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1995,14 +1997,14 @@ namespace MVCProject {
                 base.Columns.Add(this.columnIsbn);
                 this.columnGenero = new global::System.Data.DataColumn("Genero", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGenero);
-                this.columnEditora = new global::System.Data.DataColumn("Editora", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEditora);
                 this.columnSinopse = new global::System.Data.DataColumn("Sinopse", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSinopse);
                 this.columnObservacoes = new global::System.Data.DataColumn("Observacoes", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnObservacoes);
                 this.columnAtivo = new global::System.Data.DataColumn("Ativo", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAtivo);
+                this.columnEditorasNome = new global::System.Data.DataColumn("EditorasNome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEditorasNome);
                 this.columnUsuInc = new global::System.Data.DataColumn("UsuInc", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUsuInc);
                 this.columnUsuAlt = new global::System.Data.DataColumn("UsuAlt", typeof(int), null, global::System.Data.MappingType.Element);
@@ -2011,6 +2013,8 @@ namespace MVCProject {
                 base.Columns.Add(this.columnDatInc);
                 this.columnDatAlt = new global::System.Data.DataColumn("DatAlt", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDatAlt);
+                this.columnGeneroNome = new global::System.Data.DataColumn("GeneroNome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGeneroNome);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -2025,10 +2029,10 @@ namespace MVCProject {
                 this.columnIsbn.AllowDBNull = false;
                 this.columnIsbn.MaxLength = 15;
                 this.columnGenero.AllowDBNull = false;
-                this.columnEditora.AllowDBNull = false;
                 this.columnSinopse.MaxLength = 2147483647;
                 this.columnObservacoes.MaxLength = 1000;
                 this.columnAtivo.AllowDBNull = false;
+                this.columnEditorasNome.DefaultValue = ((string)(""));
                 this.columnUsuInc.AllowDBNull = false;
                 this.columnUsuAlt.AllowDBNull = false;
                 this.columnDatInc.AllowDBNull = false;
@@ -3074,17 +3078,6 @@ namespace MVCProject {
                     this[this.tableEditoras.DescricaoColumn] = value;
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LivrosRow[] GetLivrosRows() {
-                if ((this.Table.ChildRelations["FK_Livros_To_Editoras"] == null)) {
-                    return new LivrosRow[0];
-                }
-                else {
-                    return ((LivrosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Livros_To_Editoras"])));
-                }
-            }
         }
         
         /// <summary>
@@ -3276,17 +3269,6 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Editora {
-                get {
-                    return ((int)(this[this.tableLivros.EditoraColumn]));
-                }
-                set {
-                    this[this.tableLivros.EditoraColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Sinopse {
                 get {
                     try {
@@ -3325,6 +3307,22 @@ namespace MVCProject {
                 }
                 set {
                     this[this.tableLivros.AtivoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string EditorasNome {
+                get {
+                    try {
+                        return ((string)(this[this.tableLivros.EditorasNomeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EditorasNome\' in table \'Livros\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLivros.EditorasNomeColumn] = value;
                 }
             }
             
@@ -3374,12 +3372,17 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EditorasRow EditorasRow {
+            public string GeneroNome {
                 get {
-                    return ((EditorasRow)(this.GetParentRow(this.Table.ParentRelations["FK_Livros_To_Editoras"])));
+                    try {
+                        return ((string)(this[this.tableLivros.GeneroNomeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GeneroNome\' in table \'Livros\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Livros_To_Editoras"]);
+                    this[this.tableLivros.GeneroNomeColumn] = value;
                 }
             }
             
@@ -3438,6 +3441,30 @@ namespace MVCProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetObservacoesNull() {
                 this[this.tableLivros.ObservacoesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEditorasNomeNull() {
+                return this.IsNull(this.tableLivros.EditorasNomeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEditorasNomeNull() {
+                this[this.tableLivros.EditorasNomeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsGeneroNomeNull() {
+                return this.IsNull(this.tableLivros.GeneroNomeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetGeneroNomeNull() {
+                this[this.tableLivros.GeneroNomeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5447,7 +5474,6 @@ namespace MVCProject.SistemaBibliotecaDBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Titulo", "Titulo");
             tableMapping.ColumnMappings.Add("Isbn", "Isbn");
             tableMapping.ColumnMappings.Add("Genero", "Genero");
-            tableMapping.ColumnMappings.Add("Editora", "Editora");
             tableMapping.ColumnMappings.Add("Sinopse", "Sinopse");
             tableMapping.ColumnMappings.Add("Observacoes", "Observacoes");
             tableMapping.ColumnMappings.Add("Ativo", "Ativo");
@@ -5455,17 +5481,17 @@ namespace MVCProject.SistemaBibliotecaDBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("UsuAlt", "UsuAlt");
             tableMapping.ColumnMappings.Add("DatInc", "DatInc");
             tableMapping.ColumnMappings.Add("DatAlt", "DatAlt");
+            tableMapping.ColumnMappings.Add("EditorasNome", "EditorasNome");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Livros] WHERE (([Id] = @Original_Id) AND ([Registro] = @Original_Registro) AND ([Titulo] = @Original_Titulo) AND ([Isbn] = @Original_Isbn) AND ([Genero] = @Original_Genero) AND ([Editora] = @Original_Editora) AND ((@IsNull_Observacoes = 1 AND [Observacoes] IS NULL) OR ([Observacoes] = @Original_Observacoes)) AND ([Ativo] = @Original_Ativo) AND ([UsuInc] = @Original_UsuInc) AND ([UsuAlt] = @Original_UsuAlt) AND ([DatInc] = @Original_DatInc) AND ([DatAlt] = @Original_DatAlt))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Livros] WHERE (([Id] = @Original_Id) AND ([Registro] = @Original_Registro) AND ([Titulo] = @Original_Titulo) AND ([Isbn] = @Original_Isbn) AND ([Genero] = @Original_Genero) AND ((@IsNull_Observacoes = 1 AND [Observacoes] IS NULL) OR ([Observacoes] = @Original_Observacoes)) AND ([Ativo] = @Original_Ativo) AND ([UsuInc] = @Original_UsuInc) AND ([UsuAlt] = @Original_UsuAlt) AND ([DatInc] = @Original_DatInc) AND ([DatAlt] = @Original_DatAlt))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Registro", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Registro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Titulo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Titulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Isbn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Isbn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Genero", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Genero", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Editora", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Editora", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Observacoes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Observacoes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ativo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ativo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5492,14 +5518,13 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DatAlt", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatAlt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Livros] SET [Registro] = @Registro, [Titulo] = @Titulo, [Isbn] = @Isbn, [Genero] = @Genero, [Editora] = @Editora, [Sinopse] = @Sinopse, [Observacoes] = @Observacoes, [Ativo] = @Ativo, [UsuInc] = @UsuInc, [UsuAlt] = @UsuAlt, [DatInc] = @DatInc, [DatAlt] = @DatAlt WHERE (([Id] = @Original_Id) AND ([Registro] = @Original_Registro) AND ([Titulo] = @Original_Titulo) AND ([Isbn] = @Original_Isbn) AND ([Genero] = @Original_Genero) AND ([Editora] = @Original_Editora) AND ((@IsNull_Observacoes = 1 AND [Observacoes] IS NULL) OR ([Observacoes] = @Original_Observacoes)) AND ([Ativo] = @Original_Ativo) AND ([UsuInc] = @Original_UsuInc) AND ([UsuAlt] = @Original_UsuAlt) AND ([DatInc] = @Original_DatInc) AND ([DatAlt] = @Original_DatAlt));
-SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Livros WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Livros] SET [Registro] = @Registro, [Titulo] = @Titulo, [Isbn] = @Isbn, [Genero] = @Genero, [Sinopse] = @Sinopse, [Observacoes] = @Observacoes, [Ativo] = @Ativo, [UsuInc] = @UsuInc, [UsuAlt] = @UsuAlt, [DatInc] = @DatInc, [DatAlt] = @DatAlt WHERE (([Id] = @Original_Id) AND ([Registro] = @Original_Registro) AND ([Titulo] = @Original_Titulo) AND ([Isbn] = @Original_Isbn) AND ([Genero] = @Original_Genero) AND ((@IsNull_Observacoes = 1 AND [Observacoes] IS NULL) OR ([Observacoes] = @Original_Observacoes)) AND ([Ativo] = @Original_Ativo) AND ([UsuInc] = @Original_UsuInc) AND ([UsuAlt] = @Original_UsuAlt) AND ([DatInc] = @Original_DatInc) AND ([DatAlt] = @Original_DatAlt));
+SELECT Id, Registro, Titulo, Isbn, Genero, Sinopse, Observacoes, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Livros WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Registro", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Registro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Titulo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Isbn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Isbn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Genero", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Genero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Editora", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Editora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sinopse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sinopse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacoes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ativo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ativo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5512,7 +5537,6 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Titulo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Titulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Isbn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Isbn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Genero", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Genero", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Editora", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Editora", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Observacoes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Observacoes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ativo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ativo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5533,22 +5557,31 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, " +
-                "UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Livros";
+            this._commandCollection[0].CommandText = "SELECT Id, Registro, Titulo, Isbn, Genero, Sinopse, Observacoes, Ativo, UsuInc, U" +
+                "suAlt, DatInc, DatAlt FROM Livros";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, " +
-                "UsuInc, UsuAlt, DatInc, DatAlt\r\nFROM     Livros\r\nWHERE  (Ativo = 1)";
+            this._commandCollection[1].CommandText = "SELECT Id, Registro, Titulo, Isbn, Genero, Sinopse, Observacoes, Ativo, UsuInc, U" +
+                "suAlt, DatInc, DatAlt FROM Livros WHERE (Ativo = 1)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE Livros\nSET          Ativo = 0\nWHERE  (Id = @Original_Id)";
+            this._commandCollection[2].CommandText = "UPDATE Livros\r\nSET          Ativo = 0\r\nWHERE  (Id = @Original_Id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT Livros.Id, Livros.Registro, Livros.Titulo, Livros.Isbn, Livros.Genero, Livros.Editora, Livros.Sinopse, Livros.Observacoes, Livros.Ativo, Livros.UsuInc, Livros.UsuAlt, Livros.DatInc, Livros.DatAlt, Editoras.Nome AS 'EditorasNome', 
+                  Generos.Tipo AS 'GeneroNome'
+FROM     Livros INNER JOIN
+                  Editoras ON Livros.Editora = Editoras.Id INNER JOIN
+                  Generos ON Livros.Genero = Generos.Id
+WHERE  (Livros.Ativo = 1)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5602,6 +5635,30 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int TransferirNome(SistemaBibliotecaDBDataSet.LivrosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SistemaBibliotecaDBDataSet.LivrosDataTable GetDataBy2() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            SistemaBibliotecaDBDataSet.LivrosDataTable dataTable = new SistemaBibliotecaDBDataSet.LivrosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(SistemaBibliotecaDBDataSet.LivrosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
@@ -5632,7 +5689,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, int Original_Registro, string Original_Titulo, string Original_Isbn, int Original_Genero, int Original_Editora, string Original_Observacoes, bool Original_Ativo, int Original_UsuInc, int Original_UsuAlt, System.DateTime Original_DatInc, System.DateTime Original_DatAlt) {
+        public virtual int Delete(int Original_Id, int Original_Registro, string Original_Titulo, string Original_Isbn, int Original_Genero, string Original_Observacoes, bool Original_Ativo, int Original_UsuInc, int Original_UsuAlt, System.DateTime Original_DatInc, System.DateTime Original_DatAlt) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Registro));
             if ((Original_Titulo == null)) {
@@ -5648,20 +5705,19 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Isbn));
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Genero));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Editora));
             if ((Original_Observacoes == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Observacoes));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Observacoes));
             }
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((bool)(Original_Ativo));
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_UsuInc));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_UsuAlt));
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((System.DateTime)(Original_DatInc));
-            this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_DatAlt));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((bool)(Original_Ativo));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_UsuInc));
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_UsuAlt));
+            this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_DatInc));
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((System.DateTime)(Original_DatAlt));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5740,7 +5796,6 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
                     string Titulo, 
                     string Isbn, 
                     int Genero, 
-                    int Editora, 
                     string Sinopse, 
                     string Observacoes, 
                     bool Ativo, 
@@ -5753,7 +5808,6 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
                     string Original_Titulo, 
                     string Original_Isbn, 
                     int Original_Genero, 
-                    int Original_Editora, 
                     string Original_Observacoes, 
                     bool Original_Ativo, 
                     int Original_UsuInc, 
@@ -5775,54 +5829,52 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Isbn));
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Genero));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Editora));
             if ((Sinopse == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Sinopse));
+            }
+            if ((Observacoes == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Sinopse));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Observacoes));
             }
-            if ((Observacoes == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Observacoes));
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Ativo));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(UsuInc));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(UsuAlt));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(DatInc));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(DatAlt));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Registro));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Ativo));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(UsuInc));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(UsuAlt));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(DatInc));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(DatAlt));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Registro));
             if ((Original_Titulo == null)) {
                 throw new global::System.ArgumentNullException("Original_Titulo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Titulo));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Titulo));
             }
             if ((Original_Isbn == null)) {
                 throw new global::System.ArgumentNullException("Original_Isbn");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Isbn));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Isbn));
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Genero));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_Editora));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Genero));
             if ((Original_Observacoes == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Observacoes));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Observacoes));
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((bool)(Original_Ativo));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_UsuInc));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_UsuAlt));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_DatInc));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_DatAlt));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(Original_Ativo));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_UsuInc));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_UsuAlt));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_DatInc));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_DatAlt));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5848,7 +5900,6 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
                     string Titulo, 
                     string Isbn, 
                     int Genero, 
-                    int Editora, 
                     string Sinopse, 
                     string Observacoes, 
                     bool Ativo, 
@@ -5861,14 +5912,13 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
                     string Original_Titulo, 
                     string Original_Isbn, 
                     int Original_Genero, 
-                    int Original_Editora, 
                     string Original_Observacoes, 
                     bool Original_Ativo, 
                     int Original_UsuInc, 
                     int Original_UsuAlt, 
                     System.DateTime Original_DatInc, 
                     System.DateTime Original_DatAlt) {
-            return this.Update(Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, UsuInc, UsuAlt, DatInc, DatAlt, Original_Id, Original_Registro, Original_Titulo, Original_Isbn, Original_Genero, Original_Editora, Original_Observacoes, Original_Ativo, Original_UsuInc, Original_UsuAlt, Original_DatInc, Original_DatAlt, Original_Id);
+            return this.Update(Registro, Titulo, Isbn, Genero, Sinopse, Observacoes, Ativo, UsuInc, UsuAlt, DatInc, DatAlt, Original_Id, Original_Registro, Original_Titulo, Original_Isbn, Original_Genero, Original_Observacoes, Original_Ativo, Original_UsuInc, Original_UsuAlt, Original_DatInc, Original_DatAlt, Original_Id);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6496,7 +6546,7 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Usuarios] WHERE (([Id] = @Original_Id) AND ([Nome] = @Original_Nome) AND ([Login] = @Original_Login) AND ([Senha] = @Original_Senha) AND ([Email] = @Original_Email) AND ([Ativo] = @Original_Ativo) AND ([UsuInt] = @Original_UsuInt) AND ([UsuAlt] = @Original_UsuAlt) AND ([DatInc] = @Original_DatInc) AND ([DatAlt] = @Original_DatAlt))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Usuarios] WHERE (([Id] = @Original_Id) AND ([Nome] = @Original_Nome) AND ([Login] = @Original_Login) AND ([Senha] = @Original_Senha) AND ([Email] = @Original_Email) AND ([Ativo] = @Original_Ativo) AND ([UsuInt] = @Original_UsuInt) AND ([UsuAlt] = @Original_UsuAlt) AND ([DatInc] = @Original_DatInc) AND ([DatAlt] = @Original_DatAlt))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -6510,7 +6560,7 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DatAlt", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatAlt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Usuarios] ([Nome], [Login], [Senha], [Email], [Ativo], [UsuInt], [UsuAlt], [DatInc], [DatAlt]) VALUES (@Nome, @Login, @Senha, @Email, @Ativo, @UsuInt, @UsuAlt, @DatInc, @DatAlt);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Usuarios] ([Nome], [Login], [Senha], [Email], [Ativo], [UsuInt], [UsuAlt], [DatInc], [DatAlt]) VALUES (@Nome, @Login, @Senha, @Email, @Ativo, @UsuInt, @UsuAlt, @DatInc, @DatAlt);
 SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt FROM Usuarios WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6524,7 +6574,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt FROM
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DatAlt", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatAlt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Usuarios] SET [Nome] = @Nome, [Login] = @Login, [Senha] = @Senha, [Email] = @Email, [Ativo] = @Ativo, [UsuInt] = @UsuInt, [UsuAlt] = @UsuAlt, [DatInc] = @DatInc, [DatAlt] = @DatAlt WHERE (([Id] = @Original_Id) AND ([Nome] = @Original_Nome) AND ([Login] = @Original_Login) AND ([Senha] = @Original_Senha) AND ([Email] = @Original_Email) AND ([Ativo] = @Original_Ativo) AND ([UsuInt] = @Original_UsuInt) AND ([UsuAlt] = @Original_UsuAlt) AND ([DatInc] = @Original_DatInc) AND ([DatAlt] = @Original_DatAlt));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Usuarios] SET [Nome] = @Nome, [Login] = @Login, [Senha] = @Senha, [Email] = @Email, [Ativo] = @Ativo, [UsuInt] = @UsuInt, [UsuAlt] = @UsuAlt, [DatInc] = @DatInc, [DatAlt] = @DatAlt WHERE (([Id] = @Original_Id) AND ([Nome] = @Original_Nome) AND ([Login] = @Original_Login) AND ([Senha] = @Original_Senha) AND ([Email] = @Original_Email) AND ([Ativo] = @Original_Ativo) AND ([UsuInt] = @Original_UsuInt) AND ([UsuAlt] = @Original_UsuAlt) AND ([DatInc] = @Original_DatInc) AND ([DatAlt] = @Original_DatAlt));
 SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt FROM Usuarios WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6562,13 +6612,13 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt FROM
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt FROM " +
-                "dbo.Usuarios";
+            this._commandCollection[0].CommandText = "SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt\r\nFROM" +
+                "     Usuarios\r\n";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt\r\nFROM" +
-                "     Usuarios\r\nWHERE  (Ativo = 1)";
+            this._commandCollection[1].CommandText = "SELECT Ativo, DatAlt, DatInc, Email, Id, Login, Nome, Senha, UsuAlt, UsuInt FROM " +
+                "Usuarios WHERE (Ativo = 1)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -7185,15 +7235,6 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(SistemaBibliotecaDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._editorasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Editoras.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._editorasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._generosTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Generos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -7230,6 +7271,15 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt FROM
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._editorasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Editoras.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._editorasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._livroAutorTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.LivroAutor.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -7258,14 +7308,6 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(SistemaBibliotecaDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._editorasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Editoras.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._editorasTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._generosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Generos.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -7295,6 +7337,14 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt FROM
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._livrosTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._editorasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Editoras.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._editorasTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -7340,6 +7390,14 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt FROM
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._editorasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Editoras.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._editorasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._livrosTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Livros.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -7369,14 +7427,6 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInt, UsuAlt, DatInc, DatAlt FROM
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._generosTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._editorasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Editoras.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._editorasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

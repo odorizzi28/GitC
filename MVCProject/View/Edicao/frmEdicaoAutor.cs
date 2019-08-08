@@ -21,8 +21,7 @@ namespace MVCProject.View.Edicao
         public Autor autor;
         private void Button1_Click(object sender, EventArgs e)
         {
-           
-            
+
             autoresRow.Nome = tbxNome.Text;
             autoresRow.Descricao = tbxDescricao.Text;
             this.Close();
