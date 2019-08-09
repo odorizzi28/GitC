@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="WpfApp1.view.ucLogin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.view"
+             xmlns:y="clr-namespace:WpfApp1"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="89*"/>
+            <ColumnDefinition Width="36*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Height="48" Name="tbxLogin" TextWrapping="Wrap" VerticalAlignment="Top" Margin="4.8,27,7,0" Grid.Column="2"/>
+        <TextBox Height="60" Name="tbxSenha" TextWrapping="Wrap" VerticalAlignment="Top" Margin="4.8,130,11,0" Grid.Column="2"/>
+
+
+
+        <Button Content="Logar"
+                Height="40"
+                VerticalAlignment="Top"
+                Click="Button_Click" Margin="94.8,265,124,0" RenderTransformOrigin="0.5,0.5" Grid.Column="2" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.575"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+
+
+
+    </Grid>
+</UserControl>

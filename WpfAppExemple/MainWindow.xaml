@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfAppExemple.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppExemple"
+        xmlns:y="clr-namespace:WpfAppExemple.Views"
+        mc:Ignorable="d"
+        Title="Laches" Height="450" Width="800">
+
+    <Grid>
+        <y:ucLogin x:Name="ucLogionForm"></y:ucLogin>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="210*"/>
+            <ColumnDefinition Width="87*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <y:ucLogin Loaded="UcLogin_Loaded" Margin="0,0,-0.4,0" Grid.RowSpan="2" Grid.ColumnSpan="3"></y:ucLogin>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="218,100.6,0,0" Grid.Row="1" Height="16" Width="0" Grid.Column="1"/>
+        <TextBlock TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="9,50,3,0" Height="40" Grid.Column="1"/>
+        <TextBlock TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,103.6,3,0" Height="40" Grid.Row="1" Grid.Column="1"><Run Text="TextBlock"/></TextBlock>
+        <Button Content="Button" Margin="5,205.6,3,67" Grid.Row="1" Grid.Column="1"/>
+    </Grid>
+</Window>

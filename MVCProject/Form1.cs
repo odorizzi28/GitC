@@ -22,29 +22,8 @@ namespace MVCProject
 
         private void Button1_Click(object sender, EventArgs e)
         {
-           /* var result = this.usuariosTableAdapter1.LoginQuery(textBox1.Text, textBox2.Text);
-            if (result != null)
-            {
-                Session.user = new Usuario
-                {
-                    id = (int)result
-                };*/
-            
-
             frmPrincipal principal = new frmPrincipal();
             principal.ShowDialog();
-
-            }
-
-           /* else
-            {
-                throw new Exception("Fuuuuuu");
-            } 
-        }
-        */
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

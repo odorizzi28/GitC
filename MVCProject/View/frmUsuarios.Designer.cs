@@ -82,12 +82,11 @@
             // 
             // Deletar
             // 
+            this.Deletar.DataPropertyName = "Id";
             this.Deletar.HeaderText = "Deletar";
             this.Deletar.MinimumWidth = 6;
             this.Deletar.Name = "Deletar";
             this.Deletar.ReadOnly = true;
-            this.Deletar.Text = "Deletar";
-            this.Deletar.UseColumnTextForButtonValue = true;
             this.Deletar.Width = 125;
             // 
             // Editar
@@ -97,8 +96,6 @@
             this.Editar.MinimumWidth = 6;
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
-            this.Editar.Text = "Editar";
-            this.Editar.UseColumnTextForButtonValue = true;
             this.Editar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
@@ -211,7 +208,6 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // usuariosTableAdapter
             // 

@@ -1,0 +1,1 @@
+﻿CREATE UNIQUE INDEX UC_Presenca_Insert on Presenca(Diario,Aluno);

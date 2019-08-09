@@ -7,16 +7,9 @@
     }
 }
 
-namespace MVCProject.SistemaBibliotecaDBDataSetTableAdapters
-{
-    partial class UsuariosTableAdapter
-    {
-    }
-
-    partial class LivroAutorTableAdapter
-    {
-    }
-
+namespace MVCProject.SistemaBibliotecaDBDataSetTableAdapters {
+    
+    
     public partial class LivrosTableAdapter {
     }
 }
