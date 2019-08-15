@@ -9,8 +9,17 @@
 <body>
     <div>
         <form id="formUsu" method="post">
-            <input type="text" name="tbxusuario" placeholder="Informar nome do usuário." />
-            <input type="submit" value="Cadastrar" />
+            <!--
+    <input id="Usuario1" type="text" name="Usuario1" placeholder="Informar nome do usuário." />
+    <input id="Ativo" type="text" name="Ativo" placeholder="Informar a situação do usuário." />
+    <input id="UsuInc" type="text" name="UsuInc" placeholder="Informar UsuInc do usuário." />
+    <input id="UsuAlt" type="text" name="UsuAlt" placeholder="Informar UsuAlt do usuário." />
+    <input id="DatInc" type="text" name="DatInc" placeholder="Informar DatInc do usuário." />
+    <input id="DatAlt" type="text" name="DatAlt" placeholder="Informar DatAlt do usuário." />
+
+    <input type="submit" value="Cadastrar" />
+                                     -->
+
         </form>
     </div>
     <div id="exemplo">
@@ -23,8 +32,12 @@
  
     
     <script>
-       
-        function cadastrarUsuario() {
+
+        $('saveContact').click(function () {
+            $.post("#saveContactForm").serializeArray().
+        })
+
+         function cadastrarUsuario() {
             $.ajax({
                 type: 'POST',
                 url: 'http://localhost:64366/Api/Usuarios',
@@ -33,6 +46,7 @@
                 dataType:'json'
             })
             
+
         }
         function GridRefresh() {
         $.get('http://localhost:64366/Api/Usuarios', function (dataApi) {

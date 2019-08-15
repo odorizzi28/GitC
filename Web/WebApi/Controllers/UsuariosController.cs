@@ -39,36 +39,10 @@ namespace WebApi.Controllers
 
         // PUT: api/Usuarios/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutUsuario(int id, Usuario usuario)
+        public IHttpActionResult PutUsuario(Usuario usuario)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != usuario.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(usuario).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UsuarioExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
+            db.Usuarios.Add(usuario);
+            
             return StatusCode(HttpStatusCode.NoContent);
         }
 
