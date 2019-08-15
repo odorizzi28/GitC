@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>--Formul�rio Contato--</title>
+
+    <style>
+        .ButtomClass {
+            width: 90px;
+            height: 50px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="inputLogin">
+        <label>Login</label>
+        <input type="email" name="Login" id="login" />
+    </div>
+
+    <div id="inputSenha">
+        <label>Senha</label>
+        <input type="password" name="Senha" id="senha" />
+    </div>
+    <div>
+        <button onclick="ValidarLogin()" style="height:35px; font-size:25px;">Login</button>
+    </div>
+
+    <div>
+        <button onclick="Aumentar()" style="height:35px; font-size:25px;">A+</button>
+        <button onclick="Diminuir()" style="height:35px; font-size:25px;">a-</button>
+    </div>
+
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var user = { Id: '1', Login: 'admin', Senha: '123' };
+        var Usuario = Object.create(user);
+
+        Usuario.data = [
+            {
+                "Id": "1",
+                "Login": "admin",
+                "Senha": "123"
+            },
+            {
+                "Id": "2",
+                "Login": "ed",
+                "Senha": "ed"
+            },
+            {
+                "Id": "3",
+                "Login": "admin",
+                "Senha": "123i"
+            }
+        ];
+
+
+
+        function ValidarLogin() {
+            var logado = false;
+            $.each(Usuario.data,
+                function (index, object) {
+                    var userLogin = $('#login').val();
+                    var userSenha = $('#senha').val();
+
+                    if ((object.Login === userLogin) && (object.Senha === userSenha) > -1) {
+                        logado = true;
+                    }
+                });
+
+            if (logado === true) {
+                alert('Voce Esta Logado');
+            }
+            else {
+                alert('Usuario ou senha incorreta');
+            }
+        }
+        var countIncrement = 16;
+        function Aumentar() {
+            var document1 = document.getElementById('inputLogin');
+            var document2 = document.getElementById('inputSenha');
+            countIncrement = countIncrement + 1;
+            document1.style.fontSize = (countIncrement) + "px";
+            document2.style.fontSize = (countIncrement) + "px";
+        }
+        function Diminuir() {
+            var document1 = document.getElementById('inputLogin');
+            var document2 = document.getElementById('inputSenha');
+            countIncrement = countIncrement - 1;
+            document1.style.fontSize = (countIncrement) + "px";
+            document2.style.fontSize = (countIncrement) + "px";
+        }
+
+        
+    </script>
+
+</body>
+</html>

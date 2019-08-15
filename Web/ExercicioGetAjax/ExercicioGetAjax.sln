@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercicioGetAjax", "ExercicioGetAjax.csproj", "{6FD540E1-1AEF-43D9-86B5-363BC16D2E85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FD540E1-1AEF-43D9-86B5-363BC16D2E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FD540E1-1AEF-43D9-86B5-363BC16D2E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FD540E1-1AEF-43D9-86B5-363BC16D2E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FD540E1-1AEF-43D9-86B5-363BC16D2E85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E61F445-F955-42D7-AF14-821955829C3D}
+	EndGlobalSection
+EndGlobal
