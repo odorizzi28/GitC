@@ -346,7 +346,6 @@
             <a href="#">Administrador</a>
           </div>
         </div>
-        <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="treeview">
@@ -408,8 +407,8 @@
       </section>
 	  
       <section class="content" style="margin-bottom:0px;padding-bottom:0px;min-height:0px;">
-        <!-- Small boxes (Stat box) -->
-        <form  name="formusuarios" id="formusuarios"  class="box box-primary  collapsed-box" >
+
+        <form call="GetMethod" send-post="Autores"  class="box box-primary collapsed-box form-post" >
           <div class="box-header with-border">
             <h3 class="box-title">Autores</h3>
 			
@@ -426,19 +425,17 @@
                 <label for="Nome">Nome</label>
                 <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Seu nome completo"/>
               </div>
-              
             </div>
             <div class="col-md-6">
 			  <div class="form-group">
                 <label for="Descricao">Descrição</label>
                 <input type="Text" class="form-control" name="Descricao" id="Descricao" placeholder="Descrição"/>
               </div>
-              </div>
+            </div>
             <!-- /.box-body -->
-
             <div class="box-footer">
               <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar cadastro</button>
-			  <button type="button" id="bntSalvar" class="btn btn-primary" style="display:none;">Salvar cadastro</button>
+			  <button type="button" id="bntSalvar" class="btn btn-primary"   style="display:none;">Salvar cadastro</button>
 			  <button type="button" id="bntCancelar" class="btn btn-primary" style="display:none;">Cancelar cadastro</button>
             </div>
           </div>
@@ -710,8 +707,9 @@
 	  <script src="dist/js/pages/dashboard.js"></script>
 	  <!-- AdminLTE for demo purposes -->
 	  <script src="dist/js/demo.js"></script>
-	  <!-- Custom page script sections -->
-	  <script src="js/autores.js"></script>
+    <!-- Custom page script sections -->
+    <script src="js/autores.js"></script>
+	  <script src="js/utils.js"></script>
   </scriptsection>
 </body>
 

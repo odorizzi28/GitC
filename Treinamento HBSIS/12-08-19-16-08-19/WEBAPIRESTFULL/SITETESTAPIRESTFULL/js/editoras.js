@@ -24,7 +24,7 @@
         var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Autores/"+id,
+			"url": "http://localhost:59271/Api/Editoras/"+id,
 			"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -40,11 +40,28 @@
 		
 	}
 
+	
+	function Deleting(id){
+			 var settings = {
+			  "crossDomain": true,
+			  "url": "http://localhost:59271/Api/Editoras/"+id,
+			  "method": "DELETE",
+			  "headers": {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"Accept": "*/*"
+			  }
+			}
+
+			$.ajax(settings).done(function (response) {
+			    GetMethod(null);
+			});
+	}
+    
     function GetMethod(object){
 			var settings = {
 				"async": true,
 				"crossDomain": true,
-				"url": "http://localhost:59271/Api/Autores",
+				"url": "http://localhost:59271/Api/Editoras",
 				"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -80,7 +97,8 @@
 						+ '<td>' 
 						+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
 						+ 		'<div    class=\'col-md-6\'>'
-						+ 			'<button class=\'btn btn-block btn-danger col-md-3 btn-delet-event\' type=\'button\' send-post=\'Autores\'  value=\''+ value.Id +')\'>Remover</button>'						+ 		'</div>'
+						+ 			'<button class=\'btn btn-block btn-danger col-md-3 ajax\' type=\'button\'  onclick=\'Deleting('+ value.Id +')\'>Remover</button>'
+						+ 		'</div>'
 						+ 		'<div     class=\'col-md-6\'>'
 						+ 			'<button  class=\'btn btn-block btn-success col-md-3\'    type=\'button\'  onclick=\'GetByID('+ value.Id +')\'\>Editar</button>'
 						+ 		'</div>'
