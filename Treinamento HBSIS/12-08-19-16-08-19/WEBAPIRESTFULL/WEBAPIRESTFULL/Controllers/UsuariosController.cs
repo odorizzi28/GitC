@@ -34,13 +34,6 @@ namespace WEBAPIRESTFULL.Controllers
             {
                 return NotFound();
             }
-            if (MathFile.GetInstace().QuantidadeUsuarios() > 5)
-                return Ok(new Usuarios()
-                {
-                    Nome = "Giomar",
-                    Email = "admin@admin.pulsao.net.gov",
-                    Ativo = true
-                });
             return Ok(usuarios);
         }
 
@@ -121,7 +114,7 @@ namespace WEBAPIRESTFULL.Controllers
             }
             base.Dispose(disposing);
         }
-
+        
         private bool UsuariosExists(int id)
         {
             return db.Usuarios.Count(e => e.Id == id) > 0;

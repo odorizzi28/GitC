@@ -2,51 +2,8 @@
 	
 	/* Ao carregar o documento o mesmo inicia o conteudo desde script*/
 	jQuery(document).ready(function(){
-
-		jQuery('#bntCancelar').click(function(){
-			$('#bntCancelar').hide();
-			
-			$('#Id').val("");
-			$('#Nome').val("");
-			$('#Login').val("");
-			$('#Email').val("");
-			$('#Senha').val("");
-			$('#Ativo select').val("true");
-		});
-
 		GetMethod(null);
 	});
-	
-	function GetByID(id){
-        //$('#bntSubmit').hide();
-		//$('#bntSalvar').show();
-		$('#bntCancelar').show();
-		
-        var settings = {
-			"async": true,
-			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Usuarios/"+id,
-			"method": "GET",
-				"headers": {
-					"Content-Type": "application/json",
-					"Accept": "*/*"
-				}
-			}
-	
-			$.ajax(settings).done(function (response) {
-				$('#Id').val(response.Id);
-				$('#Nome').val(response.Nome);
-				$('#Login').val(response.Login);
-				$('#Senha').val(response.Senha);
-				$('#Email').val(response.Email);
-				$('#Ativo select').val(response.Ativo);
-			});
-		
-	}
-
-	function Potator(object){
-		alert('Teste potator pulgmatica');
-	}
     
     function GetMethod(object){
 			var settings = {
@@ -71,7 +28,7 @@
 	   $('#tDataGrid').empty();
 	   $('#tDataGrid').html(  '<tbody>'
 							+ 	'<tr>'
-							+ 		'<th>Id</th>'
+							+ 		'<th>ID</th>'
 							+ 		'<th>Nome</th>'
 							+ 		'<th>Login</th>'
 							+ 		'<th>E-mail</th>'
@@ -103,3 +60,6 @@
 
 		SetGridClickEvents();
     }
+	
+	
+  
