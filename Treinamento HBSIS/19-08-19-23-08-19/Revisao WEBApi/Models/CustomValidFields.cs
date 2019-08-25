@@ -29,7 +29,7 @@ namespace Revisao_WEBApi.Models
                     case ValidFields.ValidaLogin: { return ValidarLogin(value);}
                     case ValidFields.ValidaEmail: { return ValidarEmail(value, validationContext.DisplayName); }
                     case ValidFields.ValidaSenha: { return ValidarSenha(value);}
-                    case ValidFields.ValidaNome: {  return ValidarNome(value);}
+                    case ValidFields.ValidaNome:  { return ValidarNome(value);}
                     default: { } break;
                 }
             }
