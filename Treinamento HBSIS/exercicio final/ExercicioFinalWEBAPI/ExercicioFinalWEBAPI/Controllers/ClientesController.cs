@@ -90,8 +90,6 @@ namespace ExercicioFinalWEBAPI.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = cliente.Id }, cliente);
         }
-
-
         // DELETE: api/Clientes/5
         [ResponseType(typeof(Cliente))]
         public async Task<IHttpActionResult> DeleteCliente(int id)
@@ -101,13 +99,10 @@ namespace ExercicioFinalWEBAPI.Controllers
             {
                 return NotFound();
             }
-
             db.clientes.Remove(cliente);
             await db.SaveChangesAsync();
-
             return Ok(cliente);
         }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
