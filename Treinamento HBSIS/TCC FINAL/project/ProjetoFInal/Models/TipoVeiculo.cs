@@ -6,10 +6,12 @@ using System.Web;
 
 namespace ProjetoFInal.Models
 {
-    public class TermosDeUso 
+    public class TipoVeiculo
     {
 
         public int Id { get; set; }
         public string Descricao { get; set; }
+
+
     }
 }

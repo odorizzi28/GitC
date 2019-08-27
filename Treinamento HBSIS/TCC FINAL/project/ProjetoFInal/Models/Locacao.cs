@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace ProjetoFInal.Models
 {
-    public class TermosDeUso 
+    public class Locacao
     {
-
         public int Id { get; set; }
+        public int Veiculo { get; set; }
+        public int Valor { get; set; }
+        public int Periodo { get; set; }
         public string Descricao { get; set; }
+
     }
 }

@@ -1,6 +1,8 @@
 namespace ProjetoFInal.Migrations
 {
+    using ProjetoFInal.Models;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -14,10 +16,34 @@ namespace ProjetoFInal.Migrations
 
         protected override void Seed(ProjetoFInal.Models.BaseDeDados context)
         {
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+            var TipoVeiculos = new List<TipoVeiculo>() {
+                new TipoVeiculo(){Id = 0,Descricao = "Automóvel"},
+                new TipoVeiculo(){Id = 1,Descricao = "Moto"},
+                new TipoVeiculo(){Id = 2,Descricao = "Bicicleta"},
+                new TipoVeiculo(){Id = 3,Descricao = "Patinete"},
+                };
+
+            TipoVeiculos.ForEach(s => context.TipoVeiculos.AddOrUpdate(p => p.Descricao, s));
+            context.SaveChanges();
+
+            var incrementMarcasCodigo = 1;
+
+            var Marcas = new List<Marca>()
+            {
+                 new Marca(){TipoVeiculo = 1, Descricao = "Audi", Id = incrementMarcasCodigo++},
+                 new Marca(){TipoVeiculo = 1, Descricao = "BMW", Id = incrementMarcasCodigo++}
+            };
+            Marcas.ForEach(s => context.Marcas.AddOrUpdate(p => p.Id, s));
+            context.SaveChanges();
+
+
+            var Modelos = new List<Modelo>()
+            {
+                new Modelo(){ Marcas=1,TipoVeiculo=1,Descricao="100" },
+                new Modelo(){ Marcas=1,TipoVeiculo=1,Descricao="100 Avant" },
+            };
         }
+
     }
 }

@@ -13,44 +13,44 @@ using ProjetoFInal.Models;
 
 namespace ProjetoFInal.Controllers
 {
-    public class MarcasController : ApiController
+    public class PeriodoLocacoesController : ApiController
     {
         private BaseDeDados db = new BaseDeDados();
 
-        // GET: api/Marcas
-        public IQueryable<Marca> GetMarcas()
+        // GET: api/PeriodoLocacoes
+        public IQueryable<PeriodoLocacao> GetPeriodoLocacaos()
         {
-            return db.Marcas;
+            return db.PeriodoLocacaos;
         }
 
-        // GET: api/Marcas/5
-        [ResponseType(typeof(Marca))]
-        public async Task<IHttpActionResult> GetMarca(int id)
+        // GET: api/PeriodoLocacoes/5
+        [ResponseType(typeof(PeriodoLocacao))]
+        public async Task<IHttpActionResult> GetPeriodoLocacao(int id)
         {
-            Marca marca = await db.Marcas.FindAsync(id);
-            if (marca == null)
+            PeriodoLocacao periodoLocacao = await db.PeriodoLocacaos.FindAsync(id);
+            if (periodoLocacao == null)
             {
                 return NotFound();
             }
 
-            return Ok(marca);
+            return Ok(periodoLocacao);
         }
 
-        // PUT: api/Marcas/5
+        // PUT: api/PeriodoLocacoes/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutMarca(int id, Marca marca)
+        public async Task<IHttpActionResult> PutPeriodoLocacao(int id, PeriodoLocacao periodoLocacao)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != marca.Id)
+            if (id != periodoLocacao.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(marca).State = EntityState.Modified;
+            db.Entry(periodoLocacao).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace ProjetoFInal.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MarcaExists(id))
+                if (!PeriodoLocacaoExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace ProjetoFInal.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Marcas
-        [ResponseType(typeof(Marca))]
-        public async Task<IHttpActionResult> PostMarca(Marca marca)
+        // POST: api/PeriodoLocacoes
+        [ResponseType(typeof(PeriodoLocacao))]
+        public async Task<IHttpActionResult> PostPeriodoLocacao(PeriodoLocacao periodoLocacao)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Marcas.Add(marca);
+            db.PeriodoLocacaos.Add(periodoLocacao);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = marca.Id }, marca);
+            return CreatedAtRoute("DefaultApi", new { id = periodoLocacao.Id }, periodoLocacao);
         }
 
-        // DELETE: api/Marcas/5
-        [ResponseType(typeof(Marca))]
-        public async Task<IHttpActionResult> DeleteMarca(int id)
+        // DELETE: api/PeriodoLocacoes/5
+        [ResponseType(typeof(PeriodoLocacao))]
+        public async Task<IHttpActionResult> DeletePeriodoLocacao(int id)
         {
-            Marca marca = await db.Marcas.FindAsync(id);
-            if (marca == null)
+            PeriodoLocacao periodoLocacao = await db.PeriodoLocacaos.FindAsync(id);
+            if (periodoLocacao == null)
             {
                 return NotFound();
             }
 
-            db.Marcas.Remove(marca);
+            db.PeriodoLocacaos.Remove(periodoLocacao);
             await db.SaveChangesAsync();
 
-            return Ok(marca);
+            return Ok(periodoLocacao);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace ProjetoFInal.Controllers
             base.Dispose(disposing);
         }
 
-        private bool MarcaExists(int id)
+        private bool PeriodoLocacaoExists(int id)
         {
-            return db.Marcas.Count(e => e.Id == id) > 0;
+            return db.PeriodoLocacaos.Count(e => e.Id == id) > 0;
         }
     }
 }

@@ -13,44 +13,44 @@ using ProjetoFInal.Models;
 
 namespace ProjetoFInal.Controllers
 {
-    public class MarcasController : ApiController
+    public class TermosDeUsosController : ApiController
     {
         private BaseDeDados db = new BaseDeDados();
 
-        // GET: api/Marcas
-        public IQueryable<Marca> GetMarcas()
+        // GET: api/TermosDeUsos
+        public IQueryable<TermosDeUso> GetTermosDeUsos()
         {
-            return db.Marcas;
+            return db.TermosDeUsos;
         }
 
-        // GET: api/Marcas/5
-        [ResponseType(typeof(Marca))]
-        public async Task<IHttpActionResult> GetMarca(int id)
+        // GET: api/TermosDeUsos/5
+        [ResponseType(typeof(TermosDeUso))]
+        public async Task<IHttpActionResult> GetTermosDeUso(int id)
         {
-            Marca marca = await db.Marcas.FindAsync(id);
-            if (marca == null)
+            TermosDeUso termosDeUso = await db.TermosDeUsos.FindAsync(id);
+            if (termosDeUso == null)
             {
                 return NotFound();
             }
 
-            return Ok(marca);
+            return Ok(termosDeUso);
         }
 
-        // PUT: api/Marcas/5
+        // PUT: api/TermosDeUsos/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutMarca(int id, Marca marca)
+        public async Task<IHttpActionResult> PutTermosDeUso(int id, TermosDeUso termosDeUso)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != marca.Id)
+            if (id != termosDeUso.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(marca).State = EntityState.Modified;
+            db.Entry(termosDeUso).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace ProjetoFInal.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MarcaExists(id))
+                if (!TermosDeUsoExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace ProjetoFInal.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Marcas
-        [ResponseType(typeof(Marca))]
-        public async Task<IHttpActionResult> PostMarca(Marca marca)
+        // POST: api/TermosDeUsos
+        [ResponseType(typeof(TermosDeUso))]
+        public async Task<IHttpActionResult> PostTermosDeUso(TermosDeUso termosDeUso)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Marcas.Add(marca);
+            db.TermosDeUsos.Add(termosDeUso);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = marca.Id }, marca);
+            return CreatedAtRoute("DefaultApi", new { id = termosDeUso.Id }, termosDeUso);
         }
 
-        // DELETE: api/Marcas/5
-        [ResponseType(typeof(Marca))]
-        public async Task<IHttpActionResult> DeleteMarca(int id)
+        // DELETE: api/TermosDeUsos/5
+        [ResponseType(typeof(TermosDeUso))]
+        public async Task<IHttpActionResult> DeleteTermosDeUso(int id)
         {
-            Marca marca = await db.Marcas.FindAsync(id);
-            if (marca == null)
+            TermosDeUso termosDeUso = await db.TermosDeUsos.FindAsync(id);
+            if (termosDeUso == null)
             {
                 return NotFound();
             }
 
-            db.Marcas.Remove(marca);
+            db.TermosDeUsos.Remove(termosDeUso);
             await db.SaveChangesAsync();
 
-            return Ok(marca);
+            return Ok(termosDeUso);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace ProjetoFInal.Controllers
             base.Dispose(disposing);
         }
 
-        private bool MarcaExists(int id)
+        private bool TermosDeUsoExists(int id)
         {
-            return db.Marcas.Count(e => e.Id == id) > 0;
+            return db.TermosDeUsos.Count(e => e.Id == id) > 0;
         }
     }
 }

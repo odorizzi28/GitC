@@ -161,23 +161,42 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CoresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
     <Compile Include="Controllers\ModelosController.cs" />
+    <Compile Include="Controllers\PeriodoLocacoesController.cs" />
+    <Compile Include="Controllers\Quantidade_VagasController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\TermosDeUsosController.cs" />
+    <Compile Include="Controllers\TipoVeiculosController.cs" />
+    <Compile Include="Controllers\ValorMensalVeiculosController.cs" />
+    <Compile Include="Controllers\VeiculosController.cs" />
+    <Compile Include="Enums\ValidFields.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908262004302_primeiromigra.cs" />
-    <Compile Include="Migrations\201908262004302_primeiromigra.Designer.cs">
-      <DependentUpon>201908262004302_primeiromigra.cs</DependentUpon>
+    <Compile Include="Migrations\201908271815098_oPrimeirNovamente.cs" />
+    <Compile Include="Migrations\201908271815098_oPrimeirNovamente.Designer.cs">
+      <DependentUpon>201908271815098_oPrimeirNovamente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908271955260_InserindoDadosNaTabela.cs" />
+    <Compile Include="Migrations\201908271955260_InserindoDadosNaTabela.Designer.cs">
+      <DependentUpon>201908271955260_InserindoDadosNaTabela.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseDeDados.cs" />
     <Compile Include="Models\Cor.cs" />
+    <Compile Include="Models\CustomValidFields.cs" />
+    <Compile Include="Models\Locacao.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Modelo.cs" />
+    <Compile Include="Models\PeriodoLocacao.cs" />
+    <Compile Include="Models\Quantidade_Vaga.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Models\TermosDeUso.cs" />
-    <Compile Include="Models\UserControls.cs" />
+    <Compile Include="Models\TipoVeiculo.cs" />
+    <Compile Include="Models\ValorMensalVeiculo.cs" />
     <Compile Include="Models\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -265,8 +284,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908262004302_primeiromigra.resx">
-      <DependentUpon>201908262004302_primeiromigra.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908271815098_oPrimeirNovamente.resx">
+      <DependentUpon>201908271815098_oPrimeirNovamente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908271955260_InserindoDadosNaTabela.resx">
+      <DependentUpon>201908271955260_InserindoDadosNaTabela.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

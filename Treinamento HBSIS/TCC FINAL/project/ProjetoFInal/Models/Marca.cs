@@ -6,11 +6,13 @@ using System.Web;
 
 namespace ProjetoFInal.Models
 {
-    public class Marca : UserControls
+    public class Marca 
     {
-        [Key]
-        public int IdMarca { get; set; }
-        public string NomeMarca { get; set; }
+
+        public int Id { get; set; }
+        public string Descricao { get; set; }
+        public int TipoVeiculo { get; set; }
+        
 
        
     }

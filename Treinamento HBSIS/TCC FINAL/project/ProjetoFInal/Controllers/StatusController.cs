@@ -13,44 +13,44 @@ using ProjetoFInal.Models;
 
 namespace ProjetoFInal.Controllers
 {
-    public class MarcasController : ApiController
+    public class StatusController : ApiController
     {
         private BaseDeDados db = new BaseDeDados();
 
-        // GET: api/Marcas
-        public IQueryable<Marca> GetMarcas()
+        // GET: api/Status
+        public IQueryable<Status> GetStatos()
         {
-            return db.Marcas;
+            return db.Statos;
         }
 
-        // GET: api/Marcas/5
-        [ResponseType(typeof(Marca))]
-        public async Task<IHttpActionResult> GetMarca(int id)
+        // GET: api/Status/5
+        [ResponseType(typeof(Status))]
+        public async Task<IHttpActionResult> GetStatus(int id)
         {
-            Marca marca = await db.Marcas.FindAsync(id);
-            if (marca == null)
+            Status status = await db.Statos.FindAsync(id);
+            if (status == null)
             {
                 return NotFound();
             }
 
-            return Ok(marca);
+            return Ok(status);
         }
 
-        // PUT: api/Marcas/5
+        // PUT: api/Status/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutMarca(int id, Marca marca)
+        public async Task<IHttpActionResult> PutStatus(int id, Status status)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != marca.Id)
+            if (id != status.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(marca).State = EntityState.Modified;
+            db.Entry(status).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace ProjetoFInal.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MarcaExists(id))
+                if (!StatusExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace ProjetoFInal.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Marcas
-        [ResponseType(typeof(Marca))]
-        public async Task<IHttpActionResult> PostMarca(Marca marca)
+        // POST: api/Status
+        [ResponseType(typeof(Status))]
+        public async Task<IHttpActionResult> PostStatus(Status status)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Marcas.Add(marca);
+            db.Statos.Add(status);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = marca.Id }, marca);
+            return CreatedAtRoute("DefaultApi", new { id = status.Id }, status);
         }
 
-        // DELETE: api/Marcas/5
-        [ResponseType(typeof(Marca))]
-        public async Task<IHttpActionResult> DeleteMarca(int id)
+        // DELETE: api/Status/5
+        [ResponseType(typeof(Status))]
+        public async Task<IHttpActionResult> DeleteStatus(int id)
         {
-            Marca marca = await db.Marcas.FindAsync(id);
-            if (marca == null)
+            Status status = await db.Statos.FindAsync(id);
+            if (status == null)
             {
                 return NotFound();
             }
 
-            db.Marcas.Remove(marca);
+            db.Statos.Remove(status);
             await db.SaveChangesAsync();
 
-            return Ok(marca);
+            return Ok(status);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace ProjetoFInal.Controllers
             base.Dispose(disposing);
         }
 
-        private bool MarcaExists(int id)
+        private bool StatusExists(int id)
         {
-            return db.Marcas.Count(e => e.Id == id) > 0;
+            return db.Statos.Count(e => e.Id == id) > 0;
         }
     }
 }

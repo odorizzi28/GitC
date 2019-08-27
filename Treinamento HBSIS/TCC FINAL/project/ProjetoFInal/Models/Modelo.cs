@@ -7,15 +7,14 @@ using System.Web;
 
 namespace ProjetoFInal.Models
 {
-    public class Modelo : UserControls
+    public class Modelo 
     {
-        [Key]
+        
         public int Id { get; set; }
-        public string Nome { get; set; }
-        [ForeignKey("IdMarca")]
-        public Marca Marca { get; set; }
-        public int IdMarca { get; set; }
+        public string Descricao { get; set; }
+        public int Marcas { get; set; }
+        public int TipoVeiculo { get; set; }
 
-
+     
     }
 }
