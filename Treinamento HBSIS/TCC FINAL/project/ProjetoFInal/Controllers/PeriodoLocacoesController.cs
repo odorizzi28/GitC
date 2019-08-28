@@ -16,7 +16,7 @@ namespace ProjetoFInal.Controllers
     public class PeriodoLocacoesController : ApiController
     {
         private BaseDeDados db = new BaseDeDados();
-
+       
         // GET: api/PeriodoLocacoes
         public IQueryable<PeriodoLocacao> GetPeriodoLocacaos()
         {
