@@ -82,7 +82,6 @@ namespace ExercicioFinalWEBAPI.Models
 
 
         }
-        //
         private ValidationResult ValidarCelular(object value, string displayField)
         {
             bool result = Regex.IsMatch(value.ToString(), @"^(\(11\)[9][0-9]{4}-[0-9]{4})|(\(1[2-9]\) [5-9][0-9]{3}-[0-9]{4})|(\([2-9][1-9]\) [5-9][0-9]{3}-[0-9]{4})$");
@@ -93,9 +92,6 @@ namespace ExercicioFinalWEBAPI.Models
             return new ValidationResult($"O campo {displayField} é inválido.EX(XX) XXXXX-XXXX");
 
         }
-
-
-
         private ValidationResult ValidarFone(object value, string displayField)
         {
             bool result = Regex.IsMatch(value.ToString(), @"^\(\d{2}\)\d{4}-\d{4}$");
@@ -104,9 +100,7 @@ namespace ExercicioFinalWEBAPI.Models
                 return ValidationResult.Success;
             }
             return new ValidationResult($"O campo {displayField} é inválido.EX(XX)XXXX-XXXX ");
-
         }
-
         private ValidationResult ValidarCEP(object value, string displayField)
         {
             bool result = Regex.IsMatch(value.ToString(), @"^\d{5}-\d{3}$");
@@ -115,9 +109,7 @@ namespace ExercicioFinalWEBAPI.Models
                 return ValidationResult.Success;
             }
             return new ValidationResult($"O campo {displayField} é inválido. EX XXXXX-XXX");
-
         }
-
         private ValidationResult ValidarRG(object value, string displayField)
         {
             bool result = Regex.IsMatch(value.ToString(), @"^(\d{9})|(\d{2}\.\d{3}\.\d{3}-\d)$");
@@ -125,6 +117,5 @@ namespace ExercicioFinalWEBAPI.Models
                 return ValidationResult.Success;
             return new ValidationResult($"o campo {displayField} deve ser no formato XX.XXX.XXX-X");
         }
-
     }
 }
