@@ -50,6 +50,7 @@ namespace ProjetoFInal.Controllers
                 return BadRequest();
             }
 
+
             db.Entry(termosDeUso).State = EntityState.Modified;
 
             try
@@ -80,6 +81,8 @@ namespace ProjetoFInal.Controllers
                 return BadRequest(ModelState);
             }
 
+
+            
             db.TermosDeUsos.Add(termosDeUso);
             await db.SaveChangesAsync();
 

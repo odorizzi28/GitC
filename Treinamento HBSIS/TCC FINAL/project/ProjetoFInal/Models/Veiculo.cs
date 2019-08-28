@@ -7,7 +7,7 @@ using System.Web;
 namespace ProjetoFInal.Models
 {
     
-    public class Veiculo
+    public class Veiculo : UserControls
     {
         [Key]
         public string Usuario { get; set; }

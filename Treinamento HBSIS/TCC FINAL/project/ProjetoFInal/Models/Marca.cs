@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ProjetoFInal.Models
 {
-    public class Marca 
+    public class Marca : UserControls
     {
 
         public int Id { get; set; }

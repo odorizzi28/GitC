@@ -16,13 +16,23 @@ namespace ProjetoFInal.Controllers
     public class MarcasController : ApiController
     {
         private BaseDeDados db = new BaseDeDados();
-
-        // GET: api/Marcas
+        
+        
+            
+            
+            // GET: api/Marcas
         public IQueryable<Marca> GetMarcas()
         {
-            return db.Marcas.Where(x=> x.TipoVeiculo.ToString() == "1" ) ;
+            return db.Marcas;
         }
-
+        //Api/Marcas/TipoVeiculos
+        [Route("Api/Marcas/{TipoVeiculo}")]
+        [HttpGet]
+        public IEnumerable<Marca> ObterMarca(int TipoVeiculo)
+        {
+           
+            return db.Marcas.Where(x=> x.TipoVeiculo == TipoVeiculo);
+        }
         // GET: api/Marcas/5
         [ResponseType(typeof(Marca))]
         public async Task<IHttpActionResult> GetMarca(int id)

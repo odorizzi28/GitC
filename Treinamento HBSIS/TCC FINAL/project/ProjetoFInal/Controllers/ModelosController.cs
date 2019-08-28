@@ -17,12 +17,20 @@ namespace ProjetoFInal.Controllers
     {
         private BaseDeDados db = new BaseDeDados();
 
+        [Route("Api/Modelos/{CodMarca}")]
+        [HttpGet]
+        public IEnumerable<Modelo> ObterModelos(int CodMarca)
+        {
+            return db.Modelos.Where(x => x.Marcas == CodMarca);
+        }
+
         // GET: api/Modelos
         public IQueryable<Modelo> GetModelos()
         {
             return db.Modelos;
         }
 
+     
         // GET: api/Modelos/5
         [ResponseType(typeof(Modelo))]
         public async Task<IHttpActionResult> GetModelo(int id)

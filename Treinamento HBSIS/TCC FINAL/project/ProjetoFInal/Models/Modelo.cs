@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ProjetoFInal.Models
 {
-    public class Modelo 
+    public class Modelo : UserControls
     {
         
         public int Id { get; set; }

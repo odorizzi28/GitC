@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ProjetoFInal.Models
 {
-    public class Situacao
+    public class Situacao : UserControls
     {
         public int Id { get; set; }
         public string Descricao { get; set; }

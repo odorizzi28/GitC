@@ -5,11 +5,13 @@ using System.Web;
 
 namespace ProjetoFInal.Models
 {
-    public class PeriodoLocacao
+    public class PeriodoLocacao : UserControls
     {
 
         public int Id { get; set; }
+        public int TipoVeiculo { get; set; }
+        public DateTime DataInicial { get; set; }
+        public DateTime DataFinal { get; set; }
 
-        public int Quantidade_Vagas { get; set; }
     }
 }

@@ -6,11 +6,10 @@ using System.Web;
 
 namespace ProjetoFInal.Models
 {
-    public class TermosDeUso 
+    public class TermosDeUso : UserControls
     {
 
         public int Id { get; set; }
         public string Descricao { get; set; }
-        public bool Ativo { get; set; }
     }
 }

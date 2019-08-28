@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ProjetoFInal.Models
 {
-    public class ValorMensalVeiculo
+    public class ValorMensalVeiculo : UserControls
     {
         public int Id { get; set; }
         public int TipoVeiculo { get; set; }

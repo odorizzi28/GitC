@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ProjetoFInal.Models
 {
-    public class Cor 
+    public class Cor : UserControls
     {
         
         public int Id { get; set; }
