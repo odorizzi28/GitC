@@ -7,13 +7,13 @@ namespace ProjetoFInal.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InserindoDadosNaTabela : IMigrationMetadata
+    public sealed partial class aseqas : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InserindoDadosNaTabela));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(aseqas));
         
         string IMigrationMetadata.Id
         {
-            get { return "201908271955260_InserindoDadosNaTabela"; }
+            get { return "201908281711262_aseqas"; }
         }
         
         string IMigrationMetadata.Source

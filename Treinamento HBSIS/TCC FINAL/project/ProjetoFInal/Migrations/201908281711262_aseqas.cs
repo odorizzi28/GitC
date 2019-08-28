@@ -3,7 +3,7 @@ namespace ProjetoFInal.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class oPrimeirNovamente : DbMigration
+    public partial class aseqas : DbMigration
     {
         public override void Up()
         {
@@ -69,7 +69,7 @@ namespace ProjetoFInal.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Status",
+                "dbo.Situacaos",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -83,6 +83,7 @@ namespace ProjetoFInal.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Descricao = c.String(),
+                        Ativo = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -124,7 +125,7 @@ namespace ProjetoFInal.Migrations
             DropTable("dbo.ValorMensalVeiculoes");
             DropTable("dbo.TipoVeiculoes");
             DropTable("dbo.TermosDeUsoes");
-            DropTable("dbo.Status");
+            DropTable("dbo.Situacaos");
             DropTable("dbo.Quantidade_Vaga");
             DropTable("dbo.PeriodoLocacaos");
             DropTable("dbo.Modeloes");

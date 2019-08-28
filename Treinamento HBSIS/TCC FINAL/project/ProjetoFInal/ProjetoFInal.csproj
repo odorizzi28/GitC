@@ -163,11 +163,12 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CoresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocacaosController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
     <Compile Include="Controllers\ModelosController.cs" />
     <Compile Include="Controllers\PeriodoLocacoesController.cs" />
     <Compile Include="Controllers\Quantidade_VagasController.cs" />
-    <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\SituacaoController.cs" />
     <Compile Include="Controllers\TermosDeUsosController.cs" />
     <Compile Include="Controllers\TipoVeiculosController.cs" />
     <Compile Include="Controllers\ValorMensalVeiculosController.cs" />
@@ -176,13 +177,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908271815098_oPrimeirNovamente.cs" />
-    <Compile Include="Migrations\201908271815098_oPrimeirNovamente.Designer.cs">
-      <DependentUpon>201908271815098_oPrimeirNovamente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908271955260_InserindoDadosNaTabela.cs" />
-    <Compile Include="Migrations\201908271955260_InserindoDadosNaTabela.Designer.cs">
-      <DependentUpon>201908271955260_InserindoDadosNaTabela.cs</DependentUpon>
+    <Compile Include="Migrations\201908281711262_aseqas.cs" />
+    <Compile Include="Migrations\201908281711262_aseqas.Designer.cs">
+      <DependentUpon>201908281711262_aseqas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseDeDados.cs" />
@@ -193,7 +190,7 @@
     <Compile Include="Models\Modelo.cs" />
     <Compile Include="Models\PeriodoLocacao.cs" />
     <Compile Include="Models\Quantidade_Vaga.cs" />
-    <Compile Include="Models\Status.cs" />
+    <Compile Include="Models\Situacao.cs" />
     <Compile Include="Models\TermosDeUso.cs" />
     <Compile Include="Models\TipoVeiculo.cs" />
     <Compile Include="Models\ValorMensalVeiculo.cs" />
@@ -284,11 +281,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908271815098_oPrimeirNovamente.resx">
-      <DependentUpon>201908271815098_oPrimeirNovamente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908271955260_InserindoDadosNaTabela.resx">
-      <DependentUpon>201908271955260_InserindoDadosNaTabela.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908281711262_aseqas.resx">
+      <DependentUpon>201908281711262_aseqas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

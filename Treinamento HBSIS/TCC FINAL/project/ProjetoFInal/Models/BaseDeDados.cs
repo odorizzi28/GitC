@@ -16,7 +16,7 @@ namespace ProjetoFInal.Models
         public DbSet<PeriodoLocacao> PeriodoLocacaos { get; set; }
         public DbSet<Quantidade_Vaga> Quantidade_Vagas { get; set; }
         public DbSet<Veiculo> Veiculos { get; set; }
-        public DbSet<Status> Statos{ get; set; }
+        public DbSet<Situacao> Statos{ get; set; }
         public DbSet<ValorMensalVeiculo> ValorMensals { get; set; }
         public DbSet<Locacao> Locacoes { get; set; }
     }

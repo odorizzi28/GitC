@@ -13,44 +13,44 @@ using ProjetoFInal.Models;
 
 namespace ProjetoFInal.Controllers
 {
-    public class StatusController : ApiController
+    public class LocacaosController : ApiController
     {
         private BaseDeDados db = new BaseDeDados();
 
-        // GET: api/Status
-        public IQueryable<Status> GetStatos()
+        // GET: api/Locacaos
+        public IQueryable<Locacao> GetLocacoes()
         {
-            return db.Statos;
+            return db.Locacoes;
         }
 
-        // GET: api/Status/5
-        [ResponseType(typeof(Status))]
-        public async Task<IHttpActionResult> GetStatus(int id)
+        // GET: api/Locacaos/5
+        [ResponseType(typeof(Locacao))]
+        public async Task<IHttpActionResult> GetLocacao(int id)
         {
-            Status status = await db.Statos.FindAsync(id);
-            if (status == null)
+            Locacao locacao = await db.Locacoes.FindAsync(id);
+            if (locacao == null)
             {
                 return NotFound();
             }
 
-            return Ok(status);
+            return Ok(locacao);
         }
 
-        // PUT: api/Status/5
+        // PUT: api/Locacaos/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutStatus(int id, Status status)
+        public async Task<IHttpActionResult> PutLocacao(int id, Locacao locacao)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != status.Id)
+            if (id != locacao.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(status).State = EntityState.Modified;
+            db.Entry(locacao).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace ProjetoFInal.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!StatusExists(id))
+                if (!LocacaoExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace ProjetoFInal.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Status
-        [ResponseType(typeof(Status))]
-        public async Task<IHttpActionResult> PostStatus(Status status)
+        // POST: api/Locacaos
+        [ResponseType(typeof(Locacao))]
+        public async Task<IHttpActionResult> PostLocacao(Locacao locacao)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Statos.Add(status);
+            db.Locacoes.Add(locacao);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = status.Id }, status);
+            return CreatedAtRoute("DefaultApi", new { id = locacao.Id }, locacao);
         }
 
-        // DELETE: api/Status/5
-        [ResponseType(typeof(Status))]
-        public async Task<IHttpActionResult> DeleteStatus(int id)
+        // DELETE: api/Locacaos/5
+        [ResponseType(typeof(Locacao))]
+        public async Task<IHttpActionResult> DeleteLocacao(int id)
         {
-            Status status = await db.Statos.FindAsync(id);
-            if (status == null)
+            Locacao locacao = await db.Locacoes.FindAsync(id);
+            if (locacao == null)
             {
                 return NotFound();
             }
 
-            db.Statos.Remove(status);
+            db.Locacoes.Remove(locacao);
             await db.SaveChangesAsync();
 
-            return Ok(status);
+            return Ok(locacao);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace ProjetoFInal.Controllers
             base.Dispose(disposing);
         }
 
-        private bool StatusExists(int id)
+        private bool LocacaoExists(int id)
         {
-            return db.Statos.Count(e => e.Id == id) > 0;
+            return db.Locacoes.Count(e => e.Id == id) > 0;
         }
     }
 }
