@@ -20,7 +20,7 @@ namespace ProjetoFInal.Controllers
         // GET: api/Marcas
         public IQueryable<Marca> GetMarcas()
         {
-            return db.Marcas;
+            return db.Marcas.Where(x=> x.TipoVeiculo.ToString() == "1" ) ;
         }
 
         // GET: api/Marcas/5
