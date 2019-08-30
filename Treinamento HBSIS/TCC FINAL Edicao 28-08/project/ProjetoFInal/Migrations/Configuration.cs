@@ -27,25 +27,13 @@ namespace ProjetoFInal.Migrations
             context.SaveChanges();
 
 
-            var Situacao = new List<Situacao>() {
-                
-                new Situacao(){Id = 1,Descricao = "Vigente"},
-                new Situacao(){Id = 2,Descricao = "Em aprovação"},
-                new Situacao(){Id = 3,Descricao = "Fila de espera"}
-
-                };
-
-            Situacao.ForEach(s => context.Situacaos.AddOrUpdate(p => p.Descricao, s));
-            context.SaveChanges();
-
-
             var Usuarios = new List<Usuario>() {
 
-                new Usuario(){Id = 1,Nome = "Edilson Rafael Odorizzi",Email= "Edilson@Gmail.com",TrabalhoNoturno = true,PDC = false,ResideForaBNU=  false, OfereceCarona =false},
-                new Usuario(){Id = 2,Nome = "Jorge Ben"              ,Email= "Jorge@Gmail.com",TrabalhoNoturno = false,PDC = true,ResideForaBNU =  false, OfereceCarona =  false},
-                new Usuario(){Id = 3,Nome = "Leandro Augusto"        ,Email= "Leandro@Gmail.com",TrabalhoNoturno = false,PDC = false,ResideForaBNU =false, OfereceCarona =true},
-                new Usuario(){Id = 3,Nome = "Guilherme de Oliveira"  ,Email= "Oliveira@Gmail.com",TrabalhoNoturno = false,PDC = false,ResideForaBNU =false, OfereceCarona =false},
-                new Usuario(){Id = 3,Nome = "Augusto de Jesus"       ,Email= "ASD@Gmail.com",TrabalhoNoturno = false,PDC = false,ResideForaBNU =false, OfereceCarona =false}
+                new Usuario(){Id = 1,Nome = "Edilson Rafael Odorizzi",UsuarioGestor =  true ,Email= "Edilson@Gmail.com",TrabalhoNoturno = true,PDC = false,ResideForaBNU=  false, OfereceCarona =false},
+                new Usuario(){Id = 2,Nome = "Jorge Ben"              ,UsuarioGestor =  false,Email= "Jorge@Gmail.com",TrabalhoNoturno = false,PDC = true,ResideForaBNU =  false, OfereceCarona =  false},
+                new Usuario(){Id = 3,Nome = "Leandro Augusto"        ,UsuarioGestor =  false,Email= "Leandro@Gmail.com",TrabalhoNoturno = false,PDC = false,ResideForaBNU =false, OfereceCarona =true},
+                new Usuario(){Id = 3,Nome = "Guilherme de Oliveira"  ,UsuarioGestor =  true ,Email= "Oliveira@Gmail.com",TrabalhoNoturno = false,PDC = false,ResideForaBNU =false, OfereceCarona =false},
+                new Usuario(){Id = 3,Nome = "Augusto de Jesus"       ,UsuarioGestor =  false,Email= "ASD@Gmail.com",TrabalhoNoturno = false,PDC = false,ResideForaBNU =false, OfereceCarona =false}
                 };
 
             foreach (var item in Usuarios)

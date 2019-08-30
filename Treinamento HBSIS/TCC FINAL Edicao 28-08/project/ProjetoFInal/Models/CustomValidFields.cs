@@ -26,10 +26,10 @@ namespace ProjetoFInal.Models
             {
                 switch (typeField)
                 {
-                    // case ValidFields.ValidaUsuario: { return ValidarLogin(value); }
+                   // case ValidFields.ValidaCadastroDuploVeiculo: { return ValidarCadastroDuplicadoVeiculos(value); }
                     case ValidFields.ValidaEmail: { return ValidarEmail(value, validationContext.DisplayName); }
-                     case ValidFields.ValidaPlaca: { return ValidaPlacar(value); }
-                    // case ValidFields.ValidaNome: { return ValidarNome(value); }
+                    case ValidFields.ValidaPlaca: { return ValidarPlaca(value); }
+                    case ValidFields.ValidaAceitoTermosDeUso: { return ValidarAceitoDeTermos(value); }
                     default: { } break;
                 }
             }
@@ -63,42 +63,39 @@ namespace ProjetoFInal.Models
 
         }
 
-
-        private ValidationResult ValidaPlacar(object value)
+        private ValidationResult ValidarPlaca(object value)
         {
             bool placaCarroBrasil = Regex.IsMatch(value.ToString(), @"^[a-zA-Z]{3}[-][0-9]{4}$");
 
             bool placaCarroMercoSul = Regex.IsMatch(value.ToString(), @"^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$");
 
             bool placaMotoMercoSul = Regex.IsMatch(value.ToString(), @"^[a-zA-Z]{3}[0-9]{2}[a-zA-Z]{1}[0-9]{1}$");
-            
-            if (placaCarroBrasil)
+
+            if (value != null)
             {
-                return ValidationResult.Success;
+                if (placaCarroBrasil || placaCarroMercoSul || placaMotoMercoSul)
+                {
+                    var duplica = db.Locacoes.First(x => x.PlacaVeiculo != value.ToString());
+                    if (duplica.PlacaVeiculo == value.ToString())
+                    {
+                        return new ValidationResult("A placa informada já está cadastrada no sistema");
+                    }
+                    return ValidationResult.Success;
+                }
             }
-            
-            if (placaCarroMercoSul)
-            {
-                return ValidationResult.Success;
-            }
-            if (placaMotoMercoSul)
-            {              
-                return ValidationResult.Success;
-            }
-            
-            return new ValidationResult("A placa informada não está no formato aceitável");
+            return new ValidationResult("A placa informada está não está no formato aceitável");
         }
-        private ValidationResult ValidaPlacaDuplicada(object value)
+
+
+        private ValidationResult ValidarAceitoDeTermos(object value)
         {
-            Locacao CodPlaca = db.Locacoes.FirstOrDefault(x => x.PlacaVeiculo == value.ToString());
-
-            if (CodPlaca != value)
+            if (value.Equals("True"))
             {
                 return ValidationResult.Success;
             }
-            return new ValidationResult("A placa informada já está cadastrada no sistema");
-
-
+            return new ValidationResult("Para realizar a locação, você deve aceitar os termos de uso.");
         }
+
+
     }
 }

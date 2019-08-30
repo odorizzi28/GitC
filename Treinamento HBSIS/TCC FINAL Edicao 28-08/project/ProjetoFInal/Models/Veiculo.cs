@@ -11,10 +11,11 @@ namespace ProjetoFInal.Models
     {
         [Key]
         public int Id { get; set; }
-        public int Usuario { get; set; }
+        public int CodUsuario { get; set; }
         public int CodModelo { get; set; }
         public int CodMarca { get; set; }
         public int CodCor { get; set; }
+        [CustomValidFields(Enums.ValidFields.ValidaPlaca)]
         public string Placa { get; set; }
         
     }

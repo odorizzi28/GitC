@@ -3,7 +3,7 @@ namespace ProjetoFInal.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class eqweqweq : DbMigration
+    public partial class _014 : DbMigration
     {
         public override void Up()
         {
@@ -33,7 +33,7 @@ namespace ProjetoFInal.Migrations
                         PlacaVeiculo = c.String(),
                         CodPeriodo = c.Int(nullable: false),
                         Descricao = c.String(),
-                        CodUsuario = c.String(),
+                        CodUsuario = c.Int(nullable: false),
                         AceitoTermoDeUso = c.Boolean(nullable: false),
                         Ativo = c.Boolean(nullable: false),
                         UsuarioCriacao = c.Int(nullable: false),
@@ -107,20 +107,6 @@ namespace ProjetoFInal.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Situacaos",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Descricao = c.String(),
-                        Ativo = c.Boolean(nullable: false),
-                        UsuarioCriacao = c.Int(nullable: false),
-                        UsuarioAlteracao = c.Int(nullable: false),
-                        DataCricacao = c.DateTime(nullable: false),
-                        DataAlteracao = c.DateTime(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
                 "dbo.TermosDeUsoes",
                 c => new
                     {
@@ -159,6 +145,8 @@ namespace ProjetoFInal.Migrations
                         TrabalhoNoturno = c.Boolean(nullable: false),
                         ResideForaBNU = c.Boolean(nullable: false),
                         OfereceCarona = c.Boolean(nullable: false),
+                        UsuarioGestor = c.Boolean(nullable: false),
+                        CodVeiculo = c.Int(nullable: false),
                         Ativo = c.Boolean(nullable: false),
                         UsuarioCriacao = c.Int(nullable: false),
                         UsuarioAlteracao = c.Int(nullable: false),
@@ -187,7 +175,7 @@ namespace ProjetoFInal.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Usuario = c.String(),
+                        CodUsuario = c.Int(nullable: false),
                         CodModelo = c.Int(nullable: false),
                         CodMarca = c.Int(nullable: false),
                         CodCor = c.Int(nullable: false),
@@ -209,7 +197,6 @@ namespace ProjetoFInal.Migrations
             DropTable("dbo.Usuarios");
             DropTable("dbo.TipoVeiculoes");
             DropTable("dbo.TermosDeUsoes");
-            DropTable("dbo.Situacaos");
             DropTable("dbo.Quantidade_Vaga");
             DropTable("dbo.PeriodoLocacaos");
             DropTable("dbo.Modeloes");

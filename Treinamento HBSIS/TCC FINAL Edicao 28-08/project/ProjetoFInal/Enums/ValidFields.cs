@@ -9,5 +9,7 @@ namespace ProjetoFInal.Enums
     {
         ValidaEmail,
         ValidaPlaca,
+        ValidaAceitoTermosDeUso,
+        ValidaCadastroDuploVeiculo
     }
 }

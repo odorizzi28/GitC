@@ -17,6 +17,7 @@ namespace ProjetoFInal.Models
         public int CodPeriodo { get; set; }
         public string Descricao { get; set; }
         public int CodUsuario { get; set; }
+        [CustomValidFields(Enums.ValidFields.ValidaAceitoTermosDeUso)]
         public bool AceitoTermoDeUso { get; set; }
 
 

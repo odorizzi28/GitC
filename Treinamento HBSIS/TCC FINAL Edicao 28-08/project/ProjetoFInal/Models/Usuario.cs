@@ -17,6 +17,8 @@ namespace ProjetoFInal.Models
         public bool TrabalhoNoturno { get; set; }
         public bool ResideForaBNU { get; set; }
         public bool OfereceCarona { get; set; }
+        public bool UsuarioGestor { get; set; }
+        public int CodVeiculo { get; set; }
 
     }
 }

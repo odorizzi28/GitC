@@ -79,9 +79,7 @@ namespace ProjetoFInal.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-
-            db.Locacoes.Add(locacao);
+           db.Locacoes.Add(locacao);
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = locacao.Id }, locacao);

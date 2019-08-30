@@ -168,29 +168,29 @@
     <Compile Include="Controllers\ModelosController.cs" />
     <Compile Include="Controllers\PeriodoLocacoesController.cs" />
     <Compile Include="Controllers\Quantidade_VagasController.cs" />
-    <Compile Include="Controllers\SituacaoController.cs" />
     <Compile Include="Controllers\TermosDeUsosController.cs" />
     <Compile Include="Controllers\TipoVeiculosController.cs" />
     <Compile Include="Controllers\ValorMensalVeiculosController.cs" />
     <Compile Include="Controllers\VeiculoesController.cs" />
+    <Compile Include="Enums\Status.cs" />
     <Compile Include="Enums\ValidFields.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908291819402_eqweqweq.cs" />
-    <Compile Include="Migrations\201908291819402_eqweqweq.Designer.cs">
-      <DependentUpon>201908291819402_eqweqweq.cs</DependentUpon>
+    <Compile Include="Migrations\201908301705373_014.cs" />
+    <Compile Include="Migrations\201908301705373_014.Designer.cs">
+      <DependentUpon>201908301705373_014.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseDeDados.cs" />
     <Compile Include="Models\Cor.cs" />
+    <Compile Include="Models\CustomStatus.cs" />
     <Compile Include="Models\CustomValidFields.cs" />
     <Compile Include="Models\Locacao.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Modelo.cs" />
     <Compile Include="Models\PeriodoLocacao.cs" />
     <Compile Include="Models\Quantidade_Vaga.cs" />
-    <Compile Include="Models\Situacao.cs" />
     <Compile Include="Models\TermosDeUso.cs" />
     <Compile Include="Models\TipoVeiculo.cs" />
     <Compile Include="Models\UserControls.cs" />
@@ -283,8 +283,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908291819402_eqweqweq.resx">
-      <DependentUpon>201908291819402_eqweqweq.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908301705373_014.resx">
+      <DependentUpon>201908301705373_014.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
