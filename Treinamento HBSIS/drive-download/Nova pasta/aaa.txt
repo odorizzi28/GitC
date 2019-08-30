@@ -1,0 +1,34 @@
+CREATE TABLE [dbo].[Notas] (
+    [Id]   INT IDENTITY (1, 1) NOT NULL,
+    [Nome] INT NOT NULL,
+    [Nota] INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Notas_ToNome] FOREIGN KEY ([Nome]) REFERENCES [dbo].[Alunos] ([Id])
+);
+
+
+
+
+
+
+
+
+CREATE TABLE [dbo].[Alunos] (
+    [Id]        INT           IDENTITY (1, 1) NOT NULL,
+    [NomeAluno] VARCHAR (100) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+
+
+
+
+
+CREATE TABLE [dbo].[Turmas] (
+    [Id]          INT           IDENTITY (1, 1) NOT NULL,
+    [NomeDaTurma] VARCHAR (100) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+

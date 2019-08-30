@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String[] listaDeNomes = new string[10];
+            for (int i = 0; i < listaDeNomes.Length; i++)
+            {
+                Console.WriteLine("Coloque seu nome");
+                listaDeNomes[i] = Console.ReadLine();
+
+            }
+            for (int i = 0; i <listaDeNomes.Length, i++)
+            {
+                Console.WriteLine($"Nome Cadastrado: {listaDeNomes[i]}");
+            }
+            { Console.ReadKey}        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+            for (int i = 0; i < listaDeNomes.Length; i++)
+            {
+                Console.WriteLine("Coloque seu nome");
+                listaDeNomes[i] = Console.ReadLine();
+
+            }
+            for (int i = 0; i <listaDeNomes.Length, i++)
+            {
+                Console.WriteLine($"Nome Cadastrado: {listaDeNomes[i]}");

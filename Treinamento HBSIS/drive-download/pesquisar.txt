@@ -1,0 +1,5 @@
+concatenar excel
+cadastro de hora 
+	Começa as 00:00 e termina as 23:59:59
+arquivo CSV pesquisar 
+gerar formulario dentro da api 

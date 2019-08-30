@@ -1,0 +1,58 @@
+insert into Cors (Descricao) values ('Branco');
+insert into Cors (Descricao) values ('Preto');
+insert into Cors (Descricao) values ('Prata');
+insert into Cors (Descricao) values ('Cinza');
+insert into Cors (Descricao) values ('Vermelho');
+insert into Cors (Descricao) values ('Marrom/Bege');
+insert into Cors (Descricao) values ('Azul');
+insert into Cors (Descricao) values ('Verde');
+insert into Cors (Descricao) values ('Amarelo/Dourado');
+insert into Cors (Descricao) values ('Outras');
+
+
+
+
+
+
+insert into Marcas (Nome) values ('Audi');
+insert into Marcas (Nome) values ('BMW');
+insert into Marcas (Nome) values ('Chevrolet');
+insert into Marcas (Nome) values ('Citröen');
+insert into Marcas (Nome) values ('Fiat');
+insert into Marcas (Nome) values ('Ford');
+insert into Marcas (Nome) values ('Honda');
+insert into Marcas (Nome) values ('Hyundai');
+insert into Marcas (Nome) values ('Jeep');
+insert into Marcas (Nome) values ('Kia');
+insert into Marcas (Nome) values ('Mitsubishi');
+insert into Marcas (Nome) values ('Nissan');
+insert into Marcas (Nome) values ('Peugeot');
+insert into Marcas (Nome) values ('Renault');
+insert into Marcas (Nome) values ('Toyota');
+insert into Marcas (Nome) values ('Volkswagen');
+
+
+
+
+
+
+
+insert into Marcas (TipoVeiculo,Descricao) values (3,'Dafra');
+insert into Marcas (TipoVeiculo,Descricao) values (3,'Honda');
+insert into Marcas (TipoVeiculo,Descricao) values (3,'Suzuki');
+insert into Marcas (TipoVeiculo,Descricao) values (3,'Yamaha');
+insert into Marcas (TipoVeiculo,Descricao) values (3,'Kawasaki');
+insert into Marcas (TipoVeiculo,Descricao) values (3,'BMW');
+insert into Marcas (TipoVeiculo,Descricao) values (3,'Ducati');
+insert into Marcas (TipoVeiculo,Descricao) values (3,'');
+insert into Marcas (TipoVeiculo,Descricao) values (3,'');
+
+
+
+
+insert into Status(Descricao) values ('Vigente');
+insert into Status(Descricao) values ('Em Aprovação');
+insert into Status(Descricao) values ('Fila de Espera');
+
+
+

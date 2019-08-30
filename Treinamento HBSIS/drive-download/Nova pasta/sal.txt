@@ -1,0 +1,57 @@
+Create Table [dbo].[FoodTruck]
+(
+[id] int not null primary key identity (1,1),
+[TipoDog] varchar (100) not null,
+[TotalVendas] int not null,
+[DataVenda] date not null
+)
+
+insert into [dbo].FoodTruck
+(TipoDog,TotalVendas,DataVenda)
+values
+('Dog da Casa',10,'2019-05-15')
+go
+insert into [dbo].FoodTruck
+(TipoDog,TotalVendas,DataVenda)
+values
+('Dog Egg',30,'2019-06-15')
+go
+insert into [dbo].FoodTruck
+(TipoDog,TotalVendas,DataVenda)
+values
+('Dog da Calabresa',50,'2019-07-15')
+go
+insert into [dbo].FoodTruck
+(TipoDog,TotalVendas,DataVenda)
+values
+('Dog da Bacon',100,'2019-04-15')
+
+go
+insert into [dbo].FoodTruck
+(TipoDog,TotalVendas,DataVenda)
+values
+('Dog da Casa',10,'2019-05-15')
+go
+insert into [dbo].FoodTruck
+(TipoDog,TotalVendas,DataVenda)
+values
+('Dog Egg',30,'2019-06-15')
+go
+insert into [dbo].FoodTruck
+(TipoDog,TotalVendas,DataVenda)
+values
+('Dog da Calabresa',50,'2019-07-15')
+
+drop  table FoodTruck
+
+
+
+
+select 
+TipoDog,
+
+(sum(TotalVendas)) as 'Media',
+month(DataVenda) as 'Mes'
+
+from FoodTruck
+group by TipoDog, month(DataVenda)

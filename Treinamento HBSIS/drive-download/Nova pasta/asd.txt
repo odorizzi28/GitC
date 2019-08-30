@@ -1,0 +1,9 @@
+
+
+
+
+
+insert into [dbo].NotaAluno
+(nome,Materia,Nota)
+  values
+ ('Joao','Matematica',7) 

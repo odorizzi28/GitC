@@ -1,0 +1,28 @@
+CREATE TABLE [dbo].[AulaCsharp]
+(
+[Id] INT PRIMARY KEY IDENTITY(1,1) not null,
+[Aluno] varchar (100) not null,
+[Idade] int not null,
+[Ativo] bit not null,
+[UsuInc] int not null,
+[UsuAlt] int not null,
+[DatInc] date not null,
+[DatAlt] date not null
+)
+go
+ insert into dbo.AulaCsharp
+ (Aluno,Idade,Ativo,UsuInc,UsuAlt,DatInc,DatAlt)
+ values
+('Edilson',21,1,1,1,GETDATE,GETDATE) go
+insert into dbo.AulaCsharp
+ (Aluno,Idade,Ativo,UsuInc,UsuAlt,DatInc,DatAlt)
+ values
+('Jorge',23,2,1,0,GETDATE,GETDATE)go
+ insert into dbo.AulaCsharp
+ (Aluno,Idade,Ativo,UsuInc,UsuAlt,DatInc,DatAlt)
+ values
+('Eduardo',28,1,1,1,GETDATE,GETDATE)go
+ insert into dbo.AulaCsharp
+ (Aluno,Idade,Ativo,UsuInc,UsuAlt,DatInc,DatAlt)
+ values
+('Ana',31,6,1,0,GETDATE,GETDATE)
